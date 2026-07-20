@@ -58,7 +58,7 @@ document.querySelectorAll('.reveal').forEach((element) => observer.observe(eleme
 document.querySelector('[data-copy-contact]')?.addEventListener('click', async (event) => {
   const contact = event.currentTarget.dataset.contact;
   const copied = await copyText(contact);
-  showToast(copied ? `Контакт ${contact} скопирован` : `Контакт: ${contact}`);
+  showToast(copied ? `Contact ${contact} copied` : `Contact: ${contact}`);
 });
 
 const contactForm = document.querySelector('[data-contact-form]');
@@ -66,16 +66,16 @@ contactForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
   const formData = new FormData(contactForm);
   const message = [
-    'Здравствуйте! Пишу по поводу Ohlson 29 Rassvet.',
+    'Hello! I am contacting you about the Ohlson 29 Rassvet.',
     '',
-    `Имя: ${formData.get('name')}`,
-    `Контакт: ${formData.get('contact')}`,
+    `Name: ${formData.get('name')}`,
+    `Contact: ${formData.get('contact')}`,
     '',
     formData.get('message')
   ].join('\n');
 
   await copyText(message);
-  showToast('Сообщение скопировано. Открываю Telegram…');
+  showToast('Message copied. Opening Telegram…');
   window.setTimeout(() => {
     window.open('https://t.me/deelstuff', '_blank', 'noopener,noreferrer');
   }, 450);
