@@ -8,7 +8,6 @@ import json
 import re
 import shutil
 import unicodedata
-from datetime import datetime, timezone
 from pathlib import Path
 
 from PIL import Image, ImageOps
@@ -122,10 +121,7 @@ def build() -> None:
                 }
             )
 
-    manifest = {
-        "generatedAt": datetime.now(timezone.utc).isoformat(),
-        "images": records,
-    }
+    manifest = {"images": records}
     (OUTPUT_ROOT / "manifest.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
