@@ -42,6 +42,88 @@ const voyages = [
   }
 ];
 
+const cruisingGrounds = [
+  'Baltic Sea',
+  'Danish South Sea',
+  'Bornholm & Christiansø',
+  'North Sea',
+  'Wadden Sea',
+  'Dutch inland waterways',
+  'Kattegat',
+  'Skagerrak'
+];
+
+const loadVoyageOverviewStyles = () => {
+  if (document.querySelector('link[href="voyage-overview.css"]')) return;
+
+  const stylesheet = document.createElement('link');
+  stylesheet.rel = 'stylesheet';
+  stylesheet.href = 'voyage-overview.css';
+  document.head.append(stylesheet);
+};
+
+const createVoyageOverview = () => {
+  const formerMap = document.querySelector('.route-map');
+  if (!formerMap) return;
+
+  const overview = document.createElement('div');
+  overview.className = 'route-overview';
+  overview.setAttribute('aria-label', 'Summary of Rassvet’s cruising record');
+
+  const top = document.createElement('div');
+  const kicker = document.createElement('p');
+  const distance = document.createElement('p');
+  const distanceLabel = document.createElement('span');
+
+  kicker.className = 'overview-kicker';
+  kicker.textContent = 'Cruising record';
+  distance.className = 'overview-distance';
+  distance.textContent = '3,000 nm';
+  distanceLabel.textContent = 'sailed under the present ownership';
+  distance.append(distanceLabel);
+  top.append(kicker, distance);
+
+  const stats = document.createElement('div');
+  stats.className = 'overview-stats';
+
+  [
+    ['6', 'documented voyages'],
+    ['4', 'cruising seasons']
+  ].forEach(([value, label]) => {
+    const stat = document.createElement('div');
+    const strong = document.createElement('strong');
+    const span = document.createElement('span');
+
+    stat.className = 'overview-stat';
+    strong.textContent = value;
+    span.textContent = label;
+    stat.append(strong, span);
+    stats.append(stat);
+  });
+
+  const grounds = document.createElement('div');
+  const groundsTitle = document.createElement('h3');
+  const groundsList = document.createElement('ul');
+
+  grounds.className = 'cruising-grounds';
+  groundsTitle.textContent = 'Cruising grounds';
+
+  cruisingGrounds.forEach((ground) => {
+    const item = document.createElement('li');
+    item.textContent = ground;
+    groundsList.append(item);
+  });
+
+  grounds.append(groundsTitle, groundsList);
+
+  const note = document.createElement('p');
+  note.className = 'overview-note';
+  note.textContent = 'Sailed and recorded by the current owner between 2023 and 2026.';
+
+  overview.append(top, stats, grounds, note);
+  formerMap.replaceWith(overview);
+};
+
 const renderVoyages = () => {
   const routeStories = document.querySelector('.route-stories');
 
@@ -84,17 +166,7 @@ const renderVoyages = () => {
     heroFacts.append(mileage);
   }
 
-  const mapLabels = new Map([
-    ['.map-label.kiel', 'North Sea'],
-    ['.map-label.cph', 'Baltic Sea'],
-    ['.map-label.got', 'Kattegat'],
-    ['.map-label.oslo', 'Skagerrak']
-  ]);
-
-  mapLabels.forEach((label, selector) => {
-    const element = document.querySelector(selector);
-    if (element) element.textContent = label;
-  });
+  createVoyageOverview();
 };
 
 const showToast = (message) => {
@@ -122,6 +194,7 @@ const copyText = async (text) => {
   }
 };
 
+loadVoyageOverviewStyles();
 renderVoyages();
 
 window.addEventListener('scroll', () => {
