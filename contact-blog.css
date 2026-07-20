@@ -5,6 +5,8 @@
 .blog-card .eyebrow{color:var(--sun)}
 .blog-card h2{max-width:900px;font-size:clamp(40px,5vw,72px)}
 .blog-card p:not(.eyebrow){position:relative;max-width:820px;margin:28px 0 0;color:#b5c5c8}
+.blog-card .button-primary{background:var(--sun);color:var(--navy)}
+.blog-card .button-primary:hover{background:#ffd15b}
 .blog-actions{position:relative;display:grid;justify-items:start;gap:14px;min-width:230px}
 .blog-actions small{max-width:230px;color:#90a8ad;font-size:10px;line-height:1.5;text-transform:uppercase;letter-spacing:.12em}
 .contact.contact-direct{grid-template-columns:minmax(0,1fr) minmax(360px,.85fr);align-items:start}
