@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="sale-inventory.css">
+  <link rel="stylesheet" href="technical-specs.css">
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -84,23 +85,53 @@
       </div>
     </section>
 
-    <section class="section specs" aria-labelledby="specs-title">
-      <div class="specs-card reveal">
-        <div>
-          <p class="eyebrow">Ohlson 29</p>
-          <h2 id="specs-title">A compact classic built for serious sailing</h2>
-          <p>Easy to handle with a small crew, elegant in proportion and economical to berth, lift and maintain compared with a larger yacht.</p>
+    <section class="section specs technical-specs" aria-labelledby="specs-title">
+      <div class="technical-card reveal">
+        <header class="technical-header">
+          <div>
+            <p class="eyebrow">Ohlson 29 · Hull no. 170</p>
+            <h2 id="specs-title">Published design data, matched to this yacht</h2>
+            <p>The dimensions and construction figures describe the original Ohlson 29 design. The propulsion details below describe Rassvet as she is offered for sale today.</p>
+          </div>
+          <div class="hull-number" aria-label="Hull number 170">
+            <span>Hull number</span>
+            <strong>170</strong>
+          </div>
+        </header>
+
+        <div class="technical-layout">
+          <div class="design-summary">
+            <p class="technical-label">Design & construction</p>
+            <dl class="design-list">
+              <div><dt>Designer</dt><dd>Einar Ohlson</dd></div>
+              <div><dt>Year built</dt><dd>1975</dd></div>
+              <div><dt>Rig</dt><dd>Masthead sloop</dd></div>
+              <div><dt>Hull</dt><dd>Solid GRP</dd></div>
+              <div><dt>Deck</dt><dd>Solid GRP</dd></div>
+              <div><dt>Berths</dt><dd>5</dd></div>
+            </dl>
+            <p class="technical-source">Original dimensions and design figures are taken from the supplied period Ohlson 29 technical sheet. Installed equipment and the current engine are stated separately.</p>
+          </div>
+
+          <dl class="technical-grid" aria-label="Original Ohlson 29 design dimensions">
+            <div><dt>Length overall</dt><dd>8.85 m</dd></div>
+            <div><dt>Waterline length</dt><dd>6.70 m</dd></div>
+            <div><dt>Beam</dt><dd>2.70 m</dd></div>
+            <div><dt>Draft</dt><dd>1.60 m</dd></div>
+            <div><dt>Displacement</dt><dd>3.1 t</dd></div>
+            <div><dt>Ballast</dt><dd>1.25 t</dd></div>
+            <div><dt>Original sail area</dt><dd>25.2 m²</dd></div>
+            <div><dt>Mast above waterline</dt><dd>11.60 m</dd></div>
+            <div><dt>Theoretical hull speed</dt><dd>6.3 kn</dd></div>
+          </dl>
         </div>
-        <dl class="spec-list">
-          <div><dt>Year built</dt><dd>1975</dd></div>
-          <div><dt>Length</dt><dd>approximately 8.8 m</dd></div>
-          <div><dt>Hull</dt><dd>GRP</dd></div>
-          <div><dt>Rig</dt><dd>sloop</dd></div>
-          <div><dt>Engine</dt><dd>Nanni Diesel N2.14</dd></div>
-          <div><dt>Engine installed</dt><dd>2005</dd></div>
-          <div><dt>Engine hours</dt><dd>approximately 700 h</dd></div>
-          <div><dt>Home port</dt><dd>Kiel, Germany</dd></div>
-        </dl>
+
+        <div class="current-yacht" aria-label="Current details for Rassvet">
+          <div><span>This yacht</span><strong>Nanni Diesel N2.14</strong><small>installed in 2005</small></div>
+          <div><span>Engine hours</span><strong>≈ 700 h</strong></div>
+          <div><span>Diesel tank</span><strong>40 L</strong></div>
+          <div><span>Home port</span><strong>Kiel</strong></div>
+        </div>
       </div>
     </section>
 
