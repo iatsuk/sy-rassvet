@@ -86,12 +86,12 @@ const includedItems = [
   }
 ];
 
-const loadVoyageOverviewStyles = () => {
-  if (document.querySelector('link[href="voyage-overview.css"]')) return;
+const loadStylesheet = (href) => {
+  if (document.querySelector(`link[href="${href}"]`)) return;
 
   const stylesheet = document.createElement('link');
   stylesheet.rel = 'stylesheet';
-  stylesheet.href = 'voyage-overview.css';
+  stylesheet.href = href;
   document.head.append(stylesheet);
 };
 
@@ -233,6 +233,143 @@ const renderIncludedInventory = () => {
   }
 };
 
+const createContactDetail = ({ label, title, text, link, linkText, copyValue }) => {
+  const article = document.createElement('article');
+  const category = document.createElement('span');
+  const heading = document.createElement('h3');
+  const description = document.createElement('p');
+
+  article.className = 'contact-detail';
+  category.textContent = label;
+  heading.textContent = title;
+  description.textContent = text;
+  article.append(category, heading, description);
+
+  if (link) {
+    const anchor = document.createElement('a');
+    anchor.href = link;
+    anchor.target = '_blank';
+    anchor.rel = 'noreferrer';
+    anchor.textContent = linkText;
+    article.append(anchor);
+  } else if (copyValue) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.dataset.copyContact = '';
+    button.dataset.contact = copyValue;
+    button.textContent = `Copy ${copyValue}`;
+    article.append(button);
+  }
+
+  return article;
+};
+
+const renderBlogAndContact = () => {
+  const gallery = document.querySelector('#gallery');
+  const contact = document.querySelector('#contact');
+  if (!contact) return;
+
+  if (nav && !nav.querySelector('a[href="#blog"]')) {
+    const blogLink = document.createElement('a');
+    blogLink.href = '#blog';
+    blogLink.textContent = 'Logbook';
+    const galleryLink = nav.querySelector('a[href="#gallery"]');
+    nav.insertBefore(blogLink, galleryLink ?? nav.querySelector('.nav-cta'));
+  }
+
+  if (gallery && !document.querySelector('#blog')) {
+    const blog = document.createElement('section');
+    const card = document.createElement('div');
+    const copy = document.createElement('div');
+    const eyebrow = document.createElement('p');
+    const heading = document.createElement('h2');
+    const description = document.createElement('p');
+    const actions = document.createElement('div');
+    const link = document.createElement('a');
+    const note = document.createElement('small');
+
+    blog.className = 'section blog';
+    blog.id = 'blog';
+    blog.setAttribute('aria-labelledby', 'blog-title');
+    card.className = 'blog-card reveal';
+    eyebrow.className = 'eyebrow';
+    eyebrow.textContent = 'Owner’s logbook';
+    heading.id = 'blog-title';
+    heading.textContent = 'The yacht’s story has been documented in public';
+    description.textContent = 'The Telegram channel contains detailed Russian-language posts about Rassvet’s voyages, maintenance, repairs, failures and improvements throughout the present ownership.';
+    actions.className = 'blog-actions';
+    link.className = 'button button-primary';
+    link.href = 'https://t.me/deelstuff';
+    link.target = '_blank';
+    link.rel = 'noreferrer';
+    link.textContent = 'Read the sailing blog';
+    note.textContent = 'Written in Russian · Telegram translation can be used where available';
+
+    copy.append(eyebrow, heading, description);
+    actions.append(link, note);
+    card.append(copy, actions);
+    blog.append(card);
+    gallery.before(blog);
+  }
+
+  contact.className = 'section contact contact-direct';
+
+  const contactCopy = document.createElement('div');
+  const eyebrow = document.createElement('p');
+  const heading = document.createElement('h2');
+  const description = document.createElement('p');
+  const actions = document.createElement('div');
+  const telegram = document.createElement('a');
+  const instagram = document.createElement('a');
+
+  contactCopy.className = 'contact-copy reveal';
+  eyebrow.className = 'eyebrow';
+  eyebrow.textContent = 'Viewing in Kiel';
+  heading.textContent = 'Would you like to see Rassvet?';
+  description.textContent = 'Telegram is the preferred way to ask questions or arrange a viewing. Instagram is available as an alternative. Messages in English or Russian are welcome.';
+  actions.className = 'contact-links';
+
+  telegram.className = 'button button-primary';
+  telegram.href = 'https://t.me/aiatsuk';
+  telegram.target = '_blank';
+  telegram.rel = 'noreferrer';
+  telegram.textContent = 'Message on Telegram';
+
+  instagram.className = 'button button-ghost';
+  instagram.href = 'https://instagram.com/yatsukav';
+  instagram.target = '_blank';
+  instagram.rel = 'noreferrer';
+  instagram.textContent = 'Open Instagram';
+
+  actions.append(telegram, instagram);
+  contactCopy.append(eyebrow, heading, description, actions);
+
+  const details = document.createElement('div');
+  details.className = 'contact-details reveal';
+  details.append(
+    createContactDetail({
+      label: 'Preferred contact',
+      title: 'Telegram',
+      text: '@aiatsuk',
+      copyValue: '@aiatsuk'
+    }),
+    createContactDetail({
+      label: 'Alternative',
+      title: 'Instagram',
+      text: '@yatsukav',
+      link: 'https://instagram.com/yatsukav',
+      linkText: 'Open profile'
+    }),
+    createContactDetail({
+      label: 'Viewing',
+      title: 'Kiel, Germany',
+      text: 'Available by appointment. Additional photographs and the detailed handover inventory can be shared directly.'
+    })
+  );
+
+  contact.replaceChildren(contactCopy, details);
+};
+
 const showToast = (message) => {
   toast.textContent = message;
   toast.classList.add('is-visible');
@@ -258,9 +395,11 @@ const copyText = async (text) => {
   }
 };
 
-loadVoyageOverviewStyles();
+loadStylesheet('voyage-overview.css');
+loadStylesheet('contact-blog.css');
 renderVoyages();
 renderIncludedInventory();
+renderBlogAndContact();
 
 window.addEventListener('scroll', () => {
   header.classList.toggle('is-scrolled', window.scrollY > 20);
@@ -311,7 +450,7 @@ contactForm?.addEventListener('submit', async (event) => {
   await copyText(message);
   showToast('Message copied. Opening Telegram…');
   window.setTimeout(() => {
-    window.open('https://t.me/deelstuff', '_blank', 'noopener,noreferrer');
+    window.open('https://t.me/aiatsuk', '_blank', 'noopener,noreferrer');
   }, 450);
 });
 
