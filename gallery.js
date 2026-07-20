@@ -3,15 +3,52 @@
   const grid = document.querySelector('.gallery-grid');
   const summary = document.querySelector('.gallery-heading > p');
   const heroVisual = document.querySelector('.hero-visual');
+  const heroCopy = document.querySelector('.hero-copy');
+  const contactCopy = document.querySelector('.contact-copy');
   const dialog = document.querySelector('[data-gallery-dialog]');
   const dialogContent = dialog?.querySelector('.dialog-placeholder');
 
-  if (!document.querySelector('link[href="hero-photo.css"]')) {
+  ['hero-photo.css', 'sale-price.css'].forEach((href) => {
+    if (document.querySelector(`link[href="${href}"]`)) return;
+
     const stylesheet = document.createElement('link');
     stylesheet.rel = 'stylesheet';
-    stylesheet.href = 'hero-photo.css';
+    stylesheet.href = href;
     document.head.append(stylesheet);
-  }
+  });
+
+  const createSalePrice = () => {
+    const price = document.createElement('div');
+    const label = document.createElement('span');
+    const value = document.createElement('strong');
+    const note = document.createElement('small');
+
+    price.className = 'sale-price';
+    price.setAttribute('aria-label', 'Asking price 8,000 euros. Reasonable offers considered after viewing.');
+    label.textContent = 'Asking price';
+    value.textContent = '€8,000';
+    note.textContent = 'Reasonable offers considered after viewing.';
+    price.append(label, value, note);
+    return price;
+  };
+
+  const renderSalePrice = () => {
+    if (heroCopy && !heroCopy.querySelector('.sale-price')) {
+      const actions = heroCopy.querySelector('.hero-actions');
+      const price = createSalePrice();
+      if (actions) actions.before(price);
+      else heroCopy.append(price);
+    }
+
+    if (contactCopy && !contactCopy.querySelector('.sale-price')) {
+      const heading = contactCopy.querySelector('h2');
+      const price = createSalePrice();
+      if (heading) heading.after(price);
+      else contactCopy.prepend(price);
+    }
+  };
+
+  renderSalePrice();
 
   if (!grid && !heroVisual) return;
 
