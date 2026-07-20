@@ -1,0 +1,31 @@
+/* Technical specification card based on the supplied period Ohlson 29 data sheet. */
+.technical-specs{padding-top:30px}
+.technical-card{position:relative;max-width:1400px;margin:auto;overflow:hidden;border-radius:var(--radius);background:var(--navy);color:#f6f2e8;box-shadow:var(--shadow)}
+.technical-card::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:36px 36px;pointer-events:none}
+.technical-header{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:55px;align-items:end;padding:clamp(38px,5vw,72px);border-bottom:1px solid rgba(255,255,255,.13)}
+.technical-header h2{max-width:930px;font-size:clamp(38px,4.9vw,72px)}
+.technical-header>div:first-child>p:last-child{max-width:760px;margin:25px 0 0;color:#aab9bc}
+.hull-number{min-width:190px;padding-left:32px;border-left:1px solid rgba(255,255,255,.17)}
+.hull-number span,.technical-label,.current-yacht span{display:block;color:var(--sun);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+.hull-number strong{display:block;margin-top:9px;font-family:Marcellus,serif;font-size:clamp(66px,8vw,112px);font-weight:400;line-height:.8}
+.technical-layout{position:relative;display:grid;grid-template-columns:minmax(270px,.72fr) minmax(0,1.28fr)}
+.design-summary{padding:42px clamp(30px,4vw,55px);background:rgba(13,60,73,.58);border-right:1px solid rgba(255,255,255,.13)}
+.design-list{margin:26px 0 0}
+.design-list div{display:flex;justify-content:space-between;gap:25px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.11)}
+.design-list dt{color:#9db1b5;font-size:12px}
+.design-list dd{margin:0;text-align:right;font-size:12px;font-weight:700}
+.technical-source{margin:28px 0 0;color:#7f999e;font-size:10px;line-height:1.6}
+.technical-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:0}
+.technical-grid div{min-height:132px;padding:27px 28px;border-right:1px solid rgba(255,255,255,.11);border-bottom:1px solid rgba(255,255,255,.11)}
+.technical-grid div:nth-child(3n){border-right:0}
+.technical-grid dt{color:#8fa6ab;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.technical-grid dd{margin:15px 0 0;font-family:Marcellus,serif;font-size:clamp(25px,2.4vw,38px);line-height:1}
+.current-yacht{position:relative;display:grid;grid-template-columns:1.5fr repeat(3,1fr);background:var(--sun);color:var(--navy)}
+.current-yacht>div{min-height:130px;padding:27px 30px;border-right:1px solid rgba(7,27,36,.18)}
+.current-yacht>div:last-child{border-right:0}
+.current-yacht span{color:rgba(7,27,36,.65)}
+.current-yacht strong{display:block;margin-top:14px;font-family:Marcellus,serif;font-size:clamp(23px,2.3vw,35px);font-weight:400;line-height:1.08}
+.current-yacht small{display:block;margin-top:7px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+@media (max-width:1000px){.technical-header{grid-template-columns:1fr}.hull-number{display:flex;align-items:baseline;gap:18px;min-width:0;padding:25px 0 0;border-left:0;border-top:1px solid rgba(255,255,255,.15)}.hull-number strong{font-size:68px}.technical-layout{grid-template-columns:1fr}.design-summary{border-right:0;border-bottom:1px solid rgba(255,255,255,.13)}.current-yacht{grid-template-columns:repeat(2,1fr)}.current-yacht>div:nth-child(2){border-right:0}.current-yacht>div:nth-child(-n+2){border-bottom:1px solid rgba(7,27,36,.18)}}
+@media (max-width:700px){.technical-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.technical-grid div:nth-child(3n){border-right:1px solid rgba(255,255,255,.11)}.technical-grid div:nth-child(2n){border-right:0}}
+@media (max-width:480px){.technical-header{padding:35px 27px}.design-summary{padding:34px 27px}.technical-grid{grid-template-columns:1fr}.technical-grid div,.technical-grid div:nth-child(2n),.technical-grid div:nth-child(3n){border-right:0}.current-yacht{grid-template-columns:1fr}.current-yacht>div,.current-yacht>div:nth-child(2){border-right:0;border-bottom:1px solid rgba(7,27,36,.18)}.current-yacht>div:last-child{border-bottom:0}}
