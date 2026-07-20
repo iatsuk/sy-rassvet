@@ -25,12 +25,15 @@ Upload photographs into the category folders inside `photos/source/`. The websit
 
 `HEIC`, `HEIF`, `JPG`, `JPEG`, `PNG` and `WEBP` are supported.
 
+Raw iPhone photographs of 3–4 MB can be uploaded without preparation. The builder will make lightweight web copies automatically. However, Git keeps the uploaded originals in repository history, so the recommended option is to export selected photographs at approximately 2500–3000 pixels on the long edge and JPEG quality around 80–85 before uploading. This normally preserves more than enough detail for the website while keeping the repository substantially smaller.
+
 The automatic builder:
 
 - corrects iPhone EXIF orientation;
 - converts HEIC/HEIF when necessary;
+- converts wide-gamut photographs to sRGB when an embedded colour profile is available;
 - strips EXIF and location metadata from published images;
-- creates a lightweight thumbnail and a larger viewing image;
+- creates a lightweight thumbnail and a larger viewing image in WebP and JPEG;
 - updates `gallery-data.js`, so no HTML or JavaScript editing is required.
 
 Do not place generated files manually in `photos/generated/`; that folder is managed by the workflow.
