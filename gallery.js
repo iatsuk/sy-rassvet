@@ -2,10 +2,18 @@
   const items = Array.isArray(window.RASSVET_GALLERY) ? window.RASSVET_GALLERY : [];
   const grid = document.querySelector('.gallery-grid');
   const summary = document.querySelector('.gallery-heading > p');
+  const heroVisual = document.querySelector('.hero-visual');
   const dialog = document.querySelector('[data-gallery-dialog]');
   const dialogContent = dialog?.querySelector('.dialog-placeholder');
 
-  if (!grid) return;
+  if (!document.querySelector('link[href="hero-photo.css"]')) {
+    const stylesheet = document.createElement('link');
+    stylesheet.rel = 'stylesheet';
+    stylesheet.href = 'hero-photo.css';
+    document.head.append(stylesheet);
+  }
+
+  if (!grid && !heroVisual) return;
 
   const createPicture = ({ webp, jpeg }, alt, loading = 'lazy') => {
     const picture = document.createElement('picture');
@@ -22,6 +30,40 @@
     picture.append(source, image);
     return picture;
   };
+
+  const renderHeroPhoto = () => {
+    if (!heroVisual) return;
+
+    const leadItem = items.find((item) => item.lead) ?? items[0];
+    const frame = document.createElement('div');
+
+    heroVisual.classList.add('hero-photo');
+    heroVisual.removeAttribute('aria-label');
+    frame.className = 'hero-photo-frame';
+
+    if (leadItem) {
+      const picture = createPicture(leadItem.full, leadItem.alt, 'eager');
+      const image = picture.querySelector('img');
+
+      frame.classList.add('has-photo');
+      if (image) {
+        image.fetchPriority = 'high';
+        image.sizes = '(max-width: 1000px) 100vw, 52vw';
+      }
+      frame.append(picture);
+    } else {
+      const placeholder = document.createElement('div');
+      placeholder.className = 'hero-photo-placeholder';
+      placeholder.setAttribute('aria-hidden', 'true');
+      frame.append(placeholder);
+    }
+
+    heroVisual.replaceChildren(frame);
+  };
+
+  renderHeroPhoto();
+
+  if (!grid) return;
 
   if (items.length === 0) {
     grid.className = 'gallery-grid gallery-empty reveal is-visible';
