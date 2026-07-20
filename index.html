@@ -12,7 +12,9 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="sale-inventory.css">
   <link rel="stylesheet" href="technical-specs.css">
+  <link rel="stylesheet" href="gallery-auto.css">
   <script src="script.js" defer></script>
+  <script src="gallery.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -43,9 +45,9 @@
             <a class="button button-primary" href="#contact">Request details</a>
             <a class="button button-ghost" href="#timeline">View maintenance history</a>
           </div>
-          <dl class="hero-facts" aria-label="Key specifications">
-            <div><dt>8.8 m</dt><dd>length</dd></div>
-            <div><dt>5</dt><dd>berths</dd></div>
+          <dl class="hero-facts" aria-label="Key facts">
+            <div><dt>#170</dt><dd>hull number</dd></div>
+            <div><dt>3</dt><dd>owners since new</dd></div>
             <div><dt>Kiel</dt><dd>viewing location</dd></div>
           </dl>
         </div>
@@ -64,7 +66,7 @@
             <path class="water-line" d="M114 491 Q225 462 326 491 T539 491 T790 491"/>
             <text x="449" y="451" text-anchor="middle">RASSVET</text>
           </svg>
-          <p class="visual-note">Photographs of the actual yacht will be added to the gallery after the final selection.</p>
+          <p class="visual-note">Original photographs of Rassvet are organised in the gallery below.</p>
         </div>
       </div>
       <a class="scroll-hint" href="#about">Discover her story <span aria-hidden="true">↓</span></a>
@@ -134,6 +136,13 @@
           <div><span>Black-water tank</span><strong>40 L</strong></div>
           <div><span>Home port</span><strong>Kiel</strong></div>
         </div>
+
+        <div class="ownership-history" aria-label="Ownership history">
+          <div class="ownership-heading"><span>Ownership history</span><strong>Three owners since new</strong><p>A simple and unusually continuous provenance for a yacht built in 1975.</p></div>
+          <div><span>1975–2021</span><strong>First owner</strong><p>Owned from construction for approximately 46 years.</p></div>
+          <div><span>2021–2023</span><strong>Second owner</strong><p>Owned Rassvet immediately before the present ownership.</p></div>
+          <div><span>Since 2023</span><strong>Current owner</strong><p>The seller is the third owner from new.</p></div>
+        </div>
       </div>
     </section>
 
@@ -199,7 +208,7 @@
           <div class="year-content">
             <h3>Purchase and electrical-system upgrade</h3>
             <ul>
-              <li>Rassvet purchased by the current owner.</li>
+              <li>Rassvet purchased by the current owner, the third owner since new.</li>
               <li><strong>Charging:</strong> Victron Energy 15 A MPPT solar charge controller and Victron 230 V / 30 A shore-power charger installed.</li>
               <li><strong>Electrical protection:</strong> new 16 A circuit breakers installed.</li>
               <li><strong>Batteries:</strong> two new 105 Ah AGM batteries installed.</li>
@@ -273,14 +282,10 @@
     <section class="section gallery" id="gallery">
       <div class="gallery-heading reveal">
         <div><p class="eyebrow">Gallery</p><h2>Rassvet in detail</h2></div>
-        <p>These temporary cards show the intended composition. The final version will use 10–14 original high-resolution photographs.</p>
+        <p data-gallery-summary>The gallery is ready for the original photographs of Rassvet.</p>
       </div>
-      <div class="gallery-grid reveal">
-        <button class="gallery-item gallery-main" data-gallery-item data-caption="Rassvet under sail"><span>Main photograph under sail</span></button>
-        <button class="gallery-item gallery-cockpit" data-gallery-item data-caption="Cockpit and deck"><span>Cockpit and deck</span></button>
-        <button class="gallery-item gallery-cabin" data-gallery-item data-caption="Saloon"><span>Saloon</span></button>
-        <button class="gallery-item gallery-detail" data-gallery-item data-caption="Engine and onboard systems"><span>Engine and onboard systems</span></button>
-        <button class="gallery-item gallery-haulout" data-gallery-item data-caption="Underwater hull"><span>Underwater hull</span></button>
+      <div class="gallery-grid reveal" data-gallery-grid>
+        <p class="gallery-empty">Photographs will appear automatically after files are added to the categorized folders in <code>photos/</code>.</p>
       </div>
     </section>
 
@@ -312,7 +317,10 @@
 
   <dialog class="gallery-dialog" data-gallery-dialog>
     <button type="button" class="dialog-close" aria-label="Close" data-dialog-close>×</button>
-    <div class="dialog-placeholder"><p data-dialog-caption></p><small>A high-resolution photograph will open here</small></div>
+    <figure class="gallery-dialog-content">
+      <img data-dialog-image alt="">
+      <figcaption><small data-dialog-meta></small><strong data-dialog-caption></strong></figcaption>
+    </figure>
   </dialog>
   <div class="toast" role="status" aria-live="polite" data-toast></div>
 </body>
