@@ -12,7 +12,10 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="sale-inventory.css">
   <link rel="stylesheet" href="technical-specs.css">
+  <link rel="stylesheet" href="gallery.css">
+  <script src="gallery-data.js" defer></script>
   <script src="script.js" defer></script>
+  <script src="gallery.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -43,9 +46,9 @@
             <a class="button button-primary" href="#contact">Request details</a>
             <a class="button button-ghost" href="#timeline">View maintenance history</a>
           </div>
-          <dl class="hero-facts" aria-label="Key specifications">
-            <div><dt>8.8 m</dt><dd>length</dd></div>
-            <div><dt>5</dt><dd>berths</dd></div>
+          <dl class="hero-facts" aria-label="Key facts">
+            <div><dt>Hull 170</dt><dd>built in 1975</dd></div>
+            <div><dt>3rd owner</dt><dd>owned since 2023</dd></div>
             <div><dt>Kiel</dt><dd>viewing location</dd></div>
           </dl>
         </div>
@@ -80,7 +83,8 @@
         <div class="intro-points reveal">
           <article><span>01</span><div><h3>Proven on passage</h3><p>Four cruising seasons across Sweden, Denmark, Germany, the Netherlands and Norway, including night passages, fog and fresh winds.</p></div></article>
           <article><span>02</span><div><h3>Continuously maintained</h3><p>Hull, deck, engine, rig, sails and onboard systems were improved throughout ownership, not hurriedly prepared just before sale.</p></div></article>
-          <article><span>03</span><div><h3>Ready for inspection</h3><p>The yacht is in Kiel. You can inspect her carefully, review the available records and confirm the handover inventory.</p></div></article>
+          <article><span>03</span><div><h3>Three owners since new</h3><p>The first owner kept Rassvet from her construction in 1975 until 2021, the second from 2021 to 2023, and the current owner has owned and actively sailed her since 2023.</p></div></article>
+          <article><span>04</span><div><h3>Ready for inspection</h3><p>The yacht is in Kiel. You can inspect her carefully, review the available records and confirm the handover inventory.</p></div></article>
         </div>
       </div>
     </section>
@@ -273,15 +277,9 @@
     <section class="section gallery" id="gallery">
       <div class="gallery-heading reveal">
         <div><p class="eyebrow">Gallery</p><h2>Rassvet in detail</h2></div>
-        <p>These temporary cards show the intended composition. The final version will use 10–14 original high-resolution photographs.</p>
+        <p>Original photographs are loaded from the organised gallery folders and automatically optimised for fast viewing.</p>
       </div>
-      <div class="gallery-grid reveal">
-        <button class="gallery-item gallery-main" data-gallery-item data-caption="Rassvet under sail"><span>Main photograph under sail</span></button>
-        <button class="gallery-item gallery-cockpit" data-gallery-item data-caption="Cockpit and deck"><span>Cockpit and deck</span></button>
-        <button class="gallery-item gallery-cabin" data-gallery-item data-caption="Saloon"><span>Saloon</span></button>
-        <button class="gallery-item gallery-detail" data-gallery-item data-caption="Engine and onboard systems"><span>Engine and onboard systems</span></button>
-        <button class="gallery-item gallery-haulout" data-gallery-item data-caption="Underwater hull"><span>Underwater hull</span></button>
-      </div>
+      <div class="gallery-grid reveal" aria-live="polite"></div>
     </section>
 
     <section class="section contact" id="contact">
@@ -297,7 +295,7 @@
       <form class="contact-form reveal" data-contact-form>
         <label>Your name<input type="text" name="name" autocomplete="name" required></label>
         <label>How may I contact you?<input type="text" name="contact" placeholder="Email, Telegram or telephone" required></label>
-        <label>Message<textarea name="message" rows="5" placeholder="For example: I would like to arrange a viewing on Saturday..." required></textarea></label>
+        <label>Message<textarea name="message" rows="5" placeholder="For example: I would like to arrange a viewing on Saturday..." required></label>
         <button class="button button-primary" type="submit">Prepare message</button>
         <p class="form-note">This form does not send data to a server. It prepares and copies your message, then opens Telegram.</p>
       </form>
