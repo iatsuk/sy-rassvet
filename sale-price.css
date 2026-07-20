@@ -1,0 +1,7 @@
+/* Asking price shown in the hero and repeated before the contact options. */
+.sale-price{display:grid;grid-template-columns:auto minmax(150px,240px);grid-template-rows:auto auto;column-gap:22px;align-items:center;width:max-content;max-width:100%;margin:28px 0 4px;padding:18px 22px;border:1px solid rgba(7,27,36,.13);border-left:4px solid var(--sun);border-radius:14px;background:rgba(255,255,255,.46);box-shadow:0 12px 32px rgba(7,27,36,.07)}
+.sale-price>span{grid-column:1;grid-row:1;color:var(--sun-dark);font-size:10px;font-weight:700;letter-spacing:.17em;text-transform:uppercase}
+.sale-price>strong{grid-column:1;grid-row:2;margin-top:4px;font-family:Marcellus,serif;font-size:clamp(36px,4vw,50px);font-weight:400;line-height:.95;color:var(--navy);white-space:nowrap}
+.sale-price>small{grid-column:2;grid-row:1/3;color:var(--muted);font-size:11px;font-weight:600;line-height:1.45}
+.contact-copy .sale-price{margin:25px 0 24px;background:var(--paper)}
+@media (max-width:620px){.sale-price{grid-template-columns:1fr;width:100%;padding:17px 19px}.sale-price>span,.sale-price>strong,.sale-price>small{grid-column:1;grid-row:auto}.sale-price>small{margin-top:11px;max-width:310px}.sale-price>strong{font-size:40px}}
