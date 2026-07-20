@@ -1,0 +1,12 @@
+/* The hero uses the lead gallery photograph instead of the former schematic yacht. */
+.hero-photo{position:relative;min-height:580px;display:flex;align-items:center}
+.hero-photo-frame{position:absolute;inset:18px 0 38px;overflow:hidden;border:1px solid rgba(7,27,36,.12);border-radius:clamp(22px,3vw,34px);background:#dfe8e5;box-shadow:0 30px 65px rgba(5,27,35,.18);isolation:isolate}
+.hero-photo-frame picture,.hero-photo-frame img{display:block;width:100%;height:100%}
+.hero-photo-frame img{object-fit:cover;object-position:center;transition:transform .8s ease}
+.hero-photo-frame.has-photo::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(4,23,30,.03) 45%,rgba(4,23,30,.18) 100%)}
+.hero-photo:hover .hero-photo-frame.has-photo img{transform:scale(1.012)}
+.hero-photo-placeholder{position:absolute;inset:0;overflow:hidden;background:radial-gradient(circle at 68% 28%,rgba(255,217,113,.92) 0 9%,rgba(241,187,50,.22) 10% 21%,transparent 22%),linear-gradient(180deg,#e8efec 0 58%,#b6ceca 58% 60%,#486f77 60% 100%)}
+.hero-photo-placeholder::before{content:"";position:absolute;left:-10%;right:-10%;top:59%;height:1px;background:rgba(255,255,255,.58);box-shadow:0 18px 0 rgba(255,255,255,.22),0 42px 0 rgba(255,255,255,.14),0 70px 0 rgba(255,255,255,.08);transform:rotate(-1deg)}
+.hero-photo-placeholder::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.3),transparent 45%),radial-gradient(circle at 50% 120%,transparent 0 45%,rgba(7,27,36,.14) 80%);pointer-events:none}
+@media (max-width:1000px){.hero-photo{min-height:500px}.hero-photo-frame{inset:10px 0 28px}}
+@media (max-width:700px){.hero-photo{min-height:390px}.hero-photo-frame{inset:0 0 18px;border-radius:22px}}
