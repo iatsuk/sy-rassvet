@@ -24,9 +24,9 @@
     const note = document.createElement('small');
 
     price.className = 'sale-price';
-    price.setAttribute('aria-label', 'Asking price 8,000 euros. Reasonable offers considered after viewing.');
+    price.setAttribute('aria-label', 'Asking price 7,000 euros. Reasonable offers considered after viewing.');
     label.textContent = 'Asking price';
-    value.textContent = '€8,000';
+    value.textContent = '€7,000';
     note.textContent = 'Reasonable offers considered after viewing.';
     price.append(label, value, note);
     return price;
