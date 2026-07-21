@@ -3,8 +3,8 @@ window.RASSVET_GALLERY = [
   {
     "id": "01-01-hero",
     "category": "Under sail",
-    "caption": "Hero",
-    "alt": "Rassvet — Hero",
+    "caption": "Under sail 1",
+    "alt": "Rassvet — Under sail 1",
     "thumbnail": {
       "webp": "photos/generated/01-01-hero-thumb.webp",
       "jpeg": "photos/generated/01-01-hero-thumb.jpg"
@@ -39,8 +39,8 @@ window.RASSVET_GALLERY = [
   {
     "id": "01-03-unknown",
     "category": "Under sail",
-    "caption": "Unknown",
-    "alt": "Rassvet — Unknown",
+    "caption": "Under sail 3",
+    "alt": "Rassvet — Under sail 3",
     "thumbnail": {
       "webp": "photos/generated/01-03-unknown-thumb.webp",
       "jpeg": "photos/generated/01-03-unknown-thumb.jpg"
@@ -57,8 +57,8 @@ window.RASSVET_GALLERY = [
   {
     "id": "01-04-unknown",
     "category": "Under sail",
-    "caption": "Unknown",
-    "alt": "Rassvet — Unknown",
+    "caption": "Under sail 4",
+    "alt": "Rassvet — Under sail 4",
     "thumbnail": {
       "webp": "photos/generated/01-04-unknown-thumb.webp",
       "jpeg": "photos/generated/01-04-unknown-thumb.jpg"
@@ -111,8 +111,8 @@ window.RASSVET_GALLERY = [
   {
     "id": "02-01-dji-fly-20250815-200704-0018-1755281265707-photo",
     "category": "Exterior",
-    "caption": "Dji fly 20250815 200704 0018 1755281265707 photo",
-    "alt": "Rassvet — Dji fly 20250815 200704 0018 1755281265707 photo",
+    "caption": "Exterior 1",
+    "alt": "Rassvet — Exterior 1",
     "thumbnail": {
       "webp": "photos/generated/02-01-dji-fly-20250815-200704-0018-1755281265707-photo-thumb.webp",
       "jpeg": "photos/generated/02-01-dji-fly-20250815-200704-0018-1755281265707-photo-thumb.jpg"
@@ -147,8 +147,8 @@ window.RASSVET_GALLERY = [
   {
     "id": "02-03-img-20250802-103658-674",
     "category": "Exterior",
-    "caption": "IMG 20250802 103658 674",
-    "alt": "Rassvet — IMG 20250802 103658 674",
+    "caption": "Exterior 3",
+    "alt": "Rassvet — Exterior 3",
     "thumbnail": {
       "webp": "photos/generated/02-03-img-20250802-103658-674-thumb.webp",
       "jpeg": "photos/generated/02-03-img-20250802-103658-674-thumb.jpg"
@@ -165,8 +165,8 @@ window.RASSVET_GALLERY = [
   {
     "id": "02-04-img-20250802-104018-448",
     "category": "Exterior",
-    "caption": "IMG 20250802 104018 448",
-    "alt": "Rassvet — IMG 20250802 104018 448",
+    "caption": "Exterior 4",
+    "alt": "Rassvet — Exterior 4",
     "thumbnail": {
       "webp": "photos/generated/02-04-img-20250802-104018-448-thumb.webp",
       "jpeg": "photos/generated/02-04-img-20250802-104018-448-thumb.jpg"
