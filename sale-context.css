@@ -1,0 +1,86 @@
+.sale-context {
+  padding-top: 30px;
+}
+
+.sale-context-panel {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(38px, 6vw, 82px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background:
+    radial-gradient(circle at 88% 8%, rgba(241, 187, 50, .18), transparent 28%),
+    linear-gradient(145deg, #f7f4eb, #edf1ec);
+}
+
+.sale-context-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, .58fr);
+  gap: clamp(34px, 7vw, 100px);
+  align-items: end;
+}
+
+.sale-context-header h2 {
+  max-width: 800px;
+}
+
+.sale-context-lead {
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.sale-context-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: clamp(38px, 5vw, 68px);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--line);
+}
+
+.sale-context-card {
+  padding: clamp(28px, 4vw, 50px);
+  background: rgba(250, 248, 242, .94);
+}
+
+.sale-context-card > span {
+  display: block;
+  margin-bottom: 34px;
+  color: var(--sun-dark);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+}
+
+.sale-context-card h3 {
+  margin: 0 0 20px;
+  font-family: Marcellus, Georgia, serif;
+  font-size: clamp(27px, 3vw, 39px);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.sale-context-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.sale-context-card p + p {
+  margin-top: 18px;
+}
+
+@media (max-width: 800px) {
+  .sale-context-header,
+  .sale-context-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sale-context-card > span {
+    margin-bottom: 22px;
+  }
+}
