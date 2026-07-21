@@ -20,7 +20,6 @@ OUTPUT_ROOT = ROOT / "photos" / "generated"
 MANIFEST_PATH = ROOT / "gallery-data.js"
 
 SUPPORTED_EXTENSIONS = {".heic", ".heif", ".hif", ".jpg", ".jpeg", ".png", ".webp"}
-GENERIC_FILENAME = re.compile(r"^(?:img|dsc|photo|image)[-_ ]?\d+$", re.IGNORECASE)
 LEADING_NUMBER = re.compile(r"^\d+[\s._-]*")
 NATURAL_PARTS = re.compile(r"(\d+)")
 
@@ -45,14 +44,9 @@ def slugify(value: str) -> str:
     return value or "photo"
 
 
-def caption_for(path: Path, category: str, position: int) -> str:
-    cleaned = LEADING_NUMBER.sub("", path.stem)
-    if GENERIC_FILENAME.fullmatch(cleaned):
-        return f"{category} {position}"
-
-    cleaned = re.sub(r"[_-]+", " ", cleaned)
-    cleaned = re.sub(r"\s+", " ", cleaned).strip()
-    return cleaned[:1].upper() + cleaned[1:] if cleaned else f"{category} {position}"
+def caption_for(category: str, position: int) -> str:
+    """Return a stable public caption that never exposes camera filenames."""
+    return f"{category} {position}"
 
 
 def convert_to_srgb(image: Image.Image, icc_profile: bytes | None) -> Image.Image:
@@ -128,7 +122,7 @@ def build_gallery() -> list[dict[str, object]]:
                 transposed.load()
                 image = convert_to_srgb(transposed, icc_profile)
 
-            caption = caption_for(source_path, category_label, position)
+            caption = caption_for(category_label, position)
             unique_stem = f"{category_index:02d}-{position:02d}-{slugify(source_path.stem)}"
             thumbnail = save_pair(image, unique_stem, "thumb", 900, 78, 82)
             full = save_pair(image, unique_stem, "full", 2200, 84, 87)
