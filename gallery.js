@@ -14,13 +14,10 @@
   const heroCopy = document.querySelector('.hero-copy');
   const contactCopy = document.querySelector('.contact-copy');
   const intro = document.querySelector('.intro');
-  const dialog = document.querySelector('[data-gallery-dialog]');
-  const dialogContent = dialog?.querySelector('.dialog-placeholder');
   const askingPrice = '€7,000';
 
   ['hero-photo.css', 'sale-price.css', 'sale-context.css', 'i18n.css'].forEach((href) => {
     if (document.querySelector(`link[href="${href}"]`)) return;
-
     const stylesheet = document.createElement('link');
     stylesheet.rel = 'stylesheet';
     stylesheet.href = href;
@@ -110,14 +107,12 @@
     image.alt = alt;
     image.loading = loading;
     image.decoding = 'async';
-
     picture.append(source, image);
     return picture;
   };
 
   const renderHeroPhoto = () => {
     if (!heroVisual) return;
-
     const leadItem = items.find((item) => item.lead) ?? items[0];
     const frame = document.createElement('div');
 
@@ -128,7 +123,6 @@
     if (leadItem) {
       const picture = createPicture(leadItem.full, leadItem.alt, 'eager');
       const image = picture.querySelector('img');
-
       frame.classList.add('has-photo');
       if (image) {
         image.fetchPriority = 'high';
@@ -146,7 +140,6 @@
   };
 
   renderHeroPhoto();
-
   if (!grid) return;
 
   if (items.length === 0) {
@@ -161,46 +154,43 @@
   }
 
   let currentIndex = 0;
+  let lastFocusedElement = null;
 
-  const showGalleryDialog = () => {
-    if (!dialog || dialog.open) return;
+  const viewer = document.createElement('div');
+  const viewerPanel = document.createElement('div');
+  const viewerContent = document.createElement('div');
+  const closeButton = document.createElement('button');
+  const previousButton = document.createElement('button');
+  const nextButton = document.createElement('button');
 
-    try {
-      if (typeof dialog.showModal === 'function') {
-        dialog.showModal();
-        return;
-      }
+  viewer.className = 'gallery-viewer';
+  viewer.hidden = true;
+  viewer.setAttribute('role', 'dialog');
+  viewer.setAttribute('aria-modal', 'true');
+  viewer.setAttribute('aria-label', 'Photograph viewer');
+  viewerPanel.className = 'gallery-viewer-panel';
+  viewerContent.className = 'gallery-viewer-content';
 
-      if (typeof dialog.show === 'function') {
-        dialog.show();
-      } else {
-        dialog.setAttribute('open', '');
-      }
-    } catch (error) {
-      console.warn('Could not open the gallery as a modal dialog; using a fixed overlay instead.', error);
-      dialog.setAttribute('open', '');
-    }
+  closeButton.type = 'button';
+  closeButton.className = 'gallery-viewer-close';
+  closeButton.setAttribute('aria-label', 'Close');
+  closeButton.textContent = '×';
 
-    dialog.classList.add('is-fallback-open');
-    document.body.classList.add('gallery-dialog-open');
-  };
+  previousButton.type = 'button';
+  previousButton.className = 'gallery-viewer-nav gallery-viewer-previous';
+  previousButton.setAttribute('aria-label', 'Previous photograph');
+  previousButton.textContent = '‹';
 
-  const closeGalleryDialog = () => {
-    if (!dialog) return;
+  nextButton.type = 'button';
+  nextButton.className = 'gallery-viewer-nav gallery-viewer-next';
+  nextButton.setAttribute('aria-label', 'Next photograph');
+  nextButton.textContent = '›';
 
-    try {
-      if (dialog.open && typeof dialog.close === 'function') dialog.close();
-      else dialog.removeAttribute('open');
-    } catch {
-      dialog.removeAttribute('open');
-    }
+  viewerPanel.append(viewerContent, closeButton, previousButton, nextButton);
+  viewer.append(viewerPanel);
+  document.body.append(viewer);
 
-    dialog.classList.remove('is-fallback-open');
-    document.body.classList.remove('gallery-dialog-open');
-  };
-
-  const openPhoto = (index) => {
-    if (!dialog || !dialogContent) return;
+  const renderViewerPhoto = (index) => {
     currentIndex = (index + items.length) % items.length;
     const item = items[currentIndex];
     const figure = document.createElement('figure');
@@ -213,12 +203,29 @@
     title.textContent = item.caption;
     caption.append(category, title);
     figure.append(createPicture(item.full, item.alt, 'eager'), caption);
-    dialogContent.replaceChildren(figure);
-    showGalleryDialog();
+    viewerContent.replaceChildren(figure);
+  };
+
+  const openPhoto = (index) => {
+    lastFocusedElement = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    renderViewerPhoto(index);
+    viewer.hidden = false;
+    document.body.classList.add('gallery-viewer-open');
+    requestAnimationFrame(() => viewer.classList.add('is-open'));
+    closeButton.focus({ preventScroll: true });
+  };
+
+  const closeViewer = () => {
+    viewer.classList.remove('is-open');
+    document.body.classList.remove('gallery-viewer-open');
+    window.setTimeout(() => {
+      viewer.hidden = true;
+      viewerContent.replaceChildren();
+    }, 160);
+    lastFocusedElement?.focus?.({ preventScroll: true });
   };
 
   const fragment = document.createDocumentFragment();
-
   items.forEach((item, index) => {
     const button = document.createElement('button');
     const caption = document.createElement('span');
@@ -233,6 +240,7 @@
 
     button.setAttribute('aria-label', `Open photograph: ${item.caption}`);
     button.dataset.galleryIndex = String(index);
+    button.addEventListener('click', () => openPhoto(index));
 
     const picture = createPicture(item.thumbnail, item.alt, index < 2 ? 'eager' : 'lazy');
     const image = picture.querySelector('img');
@@ -252,42 +260,18 @@
     summary.textContent = `${items.length} original photograph${items.length === 1 ? '' : 's'}, automatically resized for fast loading and available in full view.`;
   }
 
-  if (!grid.dataset.galleryClickHandler) {
-    grid.dataset.galleryClickHandler = 'true';
-    grid.addEventListener('click', (event) => {
-      const button = event.target.closest('[data-gallery-index]');
-      if (!button || !grid.contains(button)) return;
-      const index = Number.parseInt(button.dataset.galleryIndex, 10);
-      if (Number.isInteger(index)) openPhoto(index);
-    });
-  }
-
-  if (dialog) {
-    const previous = document.createElement('button');
-    const next = document.createElement('button');
-    previous.type = 'button';
-    next.type = 'button';
-    previous.className = 'dialog-nav dialog-previous';
-    next.className = 'dialog-nav dialog-next';
-    previous.setAttribute('aria-label', 'Previous photograph');
-    next.setAttribute('aria-label', 'Next photograph');
-    previous.textContent = '‹';
-    next.textContent = '›';
-    previous.addEventListener('click', () => openPhoto(currentIndex - 1));
-    next.addEventListener('click', () => openPhoto(currentIndex + 1));
-    dialog.append(previous, next);
-
-    dialog.querySelector('[data-dialog-close]')?.addEventListener('click', closeGalleryDialog);
-    dialog.addEventListener('close', () => {
-      dialog.classList.remove('is-fallback-open');
-      document.body.classList.remove('gallery-dialog-open');
-    });
-    dialog.addEventListener('keydown', (event) => {
-      if (event.key === 'ArrowLeft') openPhoto(currentIndex - 1);
-      if (event.key === 'ArrowRight') openPhoto(currentIndex + 1);
-      if (event.key === 'Escape' && dialog.classList.contains('is-fallback-open')) closeGalleryDialog();
-    });
-  }
+  closeButton.addEventListener('click', closeViewer);
+  previousButton.addEventListener('click', () => renderViewerPhoto(currentIndex - 1));
+  nextButton.addEventListener('click', () => renderViewerPhoto(currentIndex + 1));
+  viewer.addEventListener('click', (event) => {
+    if (event.target === viewer) closeViewer();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (viewer.hidden) return;
+    if (event.key === 'Escape') closeViewer();
+    if (event.key === 'ArrowLeft') renderViewerPhoto(currentIndex - 1);
+    if (event.key === 'ArrowRight') renderViewerPhoto(currentIndex + 1);
+  });
 })();
 
 (() => {
