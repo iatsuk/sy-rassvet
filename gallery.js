@@ -5,10 +5,12 @@
   const heroVisual = document.querySelector('.hero-visual');
   const heroCopy = document.querySelector('.hero-copy');
   const contactCopy = document.querySelector('.contact-copy');
+  const intro = document.querySelector('.intro');
   const dialog = document.querySelector('[data-gallery-dialog]');
   const dialogContent = dialog?.querySelector('.dialog-placeholder');
+  const askingPrice = '€7,000';
 
-  ['hero-photo.css', 'sale-price.css'].forEach((href) => {
+  ['hero-photo.css', 'sale-price.css', 'sale-context.css'].forEach((href) => {
     if (document.querySelector(`link[href="${href}"]`)) return;
 
     const stylesheet = document.createElement('link');
@@ -24,9 +26,9 @@
     const note = document.createElement('small');
 
     price.className = 'sale-price';
-    price.setAttribute('aria-label', 'Asking price 7,000 euros. Reasonable offers considered after viewing.');
+    price.setAttribute('aria-label', `Asking price ${askingPrice}. Reasonable offers considered after viewing.`);
     label.textContent = 'Asking price';
-    value.textContent = '€7,000';
+    value.textContent = askingPrice;
     note.textContent = 'Reasonable offers considered after viewing.';
     price.append(label, value, note);
     return price;
@@ -48,7 +50,44 @@
     }
   };
 
+  const renderSaleContext = () => {
+    if (!intro || document.querySelector('#sale-context')) return;
+
+    const section = document.createElement('section');
+    section.className = 'section sale-context';
+    section.id = 'sale-context';
+    section.setAttribute('aria-labelledby', 'sale-context-title');
+    section.innerHTML = `
+      <div class="sale-context-panel">
+        <header class="sale-context-header">
+          <div>
+            <p class="eyebrow">Reason for sale</p>
+            <h2 id="sale-context-title">Why Rassvet is for sale</h2>
+          </div>
+          <p class="sale-context-lead">Rassvet is for sale only because I have bought a yacht better suited to my future ocean passages. I cannot give both boats the time and attention they deserve.</p>
+        </header>
+        <div class="sale-context-grid">
+          <article class="sale-context-card">
+            <span>Work already completed</span>
+            <h3>Sold as a complete cruising yacht</h3>
+            <p>Since buying Rassvet in Sweden in 2023, I have carried out substantial work on the hull, deck, rig, engine installation, electrical system and cruising equipment. She is being sold with the equipment listed on this website rather than stripped back before sale.</p>
+            <p>The asking price is intended to make the sale straightforward and to help the next owner start sailing without first having to complete a long refit.</p>
+          </article>
+          <article class="sale-context-card">
+            <span>For a new skipper</span>
+            <h3>A practical first cruising yacht</h3>
+            <p>Rassvet is a manageable and forgiving yacht for someone moving into independent coastal cruising. Her systems are comparatively simple, the maintenance history is documented, and the major known issues discovered during the current ownership have been addressed.</p>
+            <p>Like every yacht of this age, she will still require regular inspection and maintenance, but the next owner will not be starting with an unknown or neglected boat.</p>
+          </article>
+        </div>
+      </div>
+    `;
+
+    intro.after(section);
+  };
+
   renderSalePrice();
+  renderSaleContext();
 
   if (!grid && !heroVisual) return;
 
