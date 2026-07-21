@@ -1,5 +1,13 @@
 (() => {
-  const items = Array.isArray(window.RASSVET_GALLERY) ? window.RASSVET_GALLERY : [];
+  const sourceItems = Array.isArray(window.RASSVET_GALLERY) ? window.RASSVET_GALLERY : [];
+  const categoryPositions = new Map();
+  const items = sourceItems.map((item) => {
+    const position = (categoryPositions.get(item.category) || 0) + 1;
+    const caption = `${item.category} ${position}`;
+    categoryPositions.set(item.category, position);
+    return { ...item, caption, alt: `Rassvet — ${caption}` };
+  });
+
   const grid = document.querySelector('.gallery-grid');
   const summary = document.querySelector('.gallery-heading > p');
   const heroVisual = document.querySelector('.hero-visual');
@@ -154,6 +162,43 @@
 
   let currentIndex = 0;
 
+  const showGalleryDialog = () => {
+    if (!dialog || dialog.open) return;
+
+    try {
+      if (typeof dialog.showModal === 'function') {
+        dialog.showModal();
+        return;
+      }
+
+      if (typeof dialog.show === 'function') {
+        dialog.show();
+      } else {
+        dialog.setAttribute('open', '');
+      }
+    } catch (error) {
+      console.warn('Could not open the gallery as a modal dialog; using a fixed overlay instead.', error);
+      dialog.setAttribute('open', '');
+    }
+
+    dialog.classList.add('is-fallback-open');
+    document.body.classList.add('gallery-dialog-open');
+  };
+
+  const closeGalleryDialog = () => {
+    if (!dialog) return;
+
+    try {
+      if (dialog.open && typeof dialog.close === 'function') dialog.close();
+      else dialog.removeAttribute('open');
+    } catch {
+      dialog.removeAttribute('open');
+    }
+
+    dialog.classList.remove('is-fallback-open');
+    document.body.classList.remove('gallery-dialog-open');
+  };
+
   const openPhoto = (index) => {
     if (!dialog || !dialogContent) return;
     currentIndex = (index + items.length) % items.length;
@@ -169,8 +214,7 @@
     caption.append(category, title);
     figure.append(createPicture(item.full, item.alt, 'eager'), caption);
     dialogContent.replaceChildren(figure);
-
-    if (!dialog.open) dialog.showModal();
+    showGalleryDialog();
   };
 
   const fragment = document.createDocumentFragment();
@@ -199,7 +243,6 @@
     title.textContent = item.caption;
     caption.append(category, title);
     button.append(picture, caption);
-    button.addEventListener('click', () => openPhoto(index));
     fragment.append(button);
   });
 
@@ -207,6 +250,16 @@
   grid.replaceChildren(fragment);
   if (summary) {
     summary.textContent = `${items.length} original photograph${items.length === 1 ? '' : 's'}, automatically resized for fast loading and available in full view.`;
+  }
+
+  if (!grid.dataset.galleryClickHandler) {
+    grid.dataset.galleryClickHandler = 'true';
+    grid.addEventListener('click', (event) => {
+      const button = event.target.closest('[data-gallery-index]');
+      if (!button || !grid.contains(button)) return;
+      const index = Number.parseInt(button.dataset.galleryIndex, 10);
+      if (Number.isInteger(index)) openPhoto(index);
+    });
   }
 
   if (dialog) {
@@ -224,9 +277,15 @@
     next.addEventListener('click', () => openPhoto(currentIndex + 1));
     dialog.append(previous, next);
 
+    dialog.querySelector('[data-dialog-close]')?.addEventListener('click', closeGalleryDialog);
+    dialog.addEventListener('close', () => {
+      dialog.classList.remove('is-fallback-open');
+      document.body.classList.remove('gallery-dialog-open');
+    });
     dialog.addEventListener('keydown', (event) => {
       if (event.key === 'ArrowLeft') openPhoto(currentIndex - 1);
       if (event.key === 'ArrowRight') openPhoto(currentIndex + 1);
+      if (event.key === 'Escape' && dialog.classList.contains('is-fallback-open')) closeGalleryDialog();
     });
   }
 })();
