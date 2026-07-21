@@ -469,4 +469,5 @@ dialog?.addEventListener('click', (event) => {
   if (event.target === dialog) dialog.close();
 });
 
-document.querySelector('[data-year]').textContent = new Date().getFullYear();
+const year = document.querySelector('[data-year]');
+if (year) year.textContent = new Date().getFullYear();
