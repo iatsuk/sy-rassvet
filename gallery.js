@@ -10,7 +10,7 @@
   const dialogContent = dialog?.querySelector('.dialog-placeholder');
   const askingPrice = '€7,000';
 
-  ['hero-photo.css', 'sale-price.css', 'sale-context.css'].forEach((href) => {
+  ['hero-photo.css', 'sale-price.css', 'sale-context.css', 'i18n.css'].forEach((href) => {
     if (document.querySelector(`link[href="${href}"]`)) return;
 
     const stylesheet = document.createElement('link');
@@ -229,4 +229,11 @@
       if (event.key === 'ArrowRight') openPhoto(currentIndex + 1);
     });
   }
+})();
+
+(() => {
+  if (document.querySelector('script[src="i18n.js"]')) return;
+  const script = document.createElement('script');
+  script.src = 'i18n.js';
+  document.head.append(script);
 })();
