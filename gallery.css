@@ -22,8 +22,8 @@ body.gallery-viewer-open{overflow:hidden}
 .gallery-viewer-panel{position:relative;width:min(1180px,94vw);height:min(820px,92vh);overflow:hidden;border-radius:20px;background:#031015;box-shadow:0 30px 100px rgba(0,0,0,.55)}
 .gallery-viewer-content{height:100%}
 .dialog-photo{height:100%;margin:0;display:grid;grid-template-rows:minmax(0,1fr) auto}
-.dialog-photo picture{min-height:0;display:grid;place-items:center;overflow:hidden}
-.dialog-photo img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+.dialog-photo picture{position:relative;display:block;min-width:0;min-height:0;overflow:hidden}
+.dialog-photo picture img{position:absolute!important;inset:0!important;display:block!important;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;margin:0!important;transform:none!important;object-fit:contain!important;object-position:center center!important}
 .dialog-photo figcaption{display:flex;justify-content:space-between;gap:25px;align-items:baseline;padding:15px 64px 17px 24px;background:var(--navy);color:#fff}
 .dialog-photo figcaption span{color:var(--sun);font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
 .dialog-photo figcaption strong{font-size:12px;text-align:right}
