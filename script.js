@@ -434,40 +434,5 @@ document.querySelector('[data-copy-contact]')?.addEventListener('click', async (
   showToast(copied ? `Contact ${contact} copied` : `Contact: ${contact}`);
 });
 
-const contactForm = document.querySelector('[data-contact-form]');
-contactForm?.addEventListener('submit', async (event) => {
-  event.preventDefault();
-  const formData = new FormData(contactForm);
-  const message = [
-    'Hello! I am contacting you about the Ohlson 29 Rassvet.',
-    '',
-    `Name: ${formData.get('name')}`,
-    `Contact: ${formData.get('contact')}`,
-    '',
-    formData.get('message')
-  ].join('\n');
-
-  await copyText(message);
-  showToast('Message copied. Opening Telegram…');
-  window.setTimeout(() => {
-    window.open('https://t.me/aiatsuk', '_blank', 'noopener,noreferrer');
-  }, 450);
-});
-
-const dialog = document.querySelector('[data-gallery-dialog]');
-const dialogCaption = document.querySelector('[data-dialog-caption]');
-
-document.querySelectorAll('[data-gallery-item]').forEach((item) => {
-  item.addEventListener('click', () => {
-    dialogCaption.textContent = item.dataset.caption;
-    dialog.showModal();
-  });
-});
-
-document.querySelector('[data-dialog-close]')?.addEventListener('click', () => dialog.close());
-dialog?.addEventListener('click', (event) => {
-  if (event.target === dialog) dialog.close();
-});
-
 const year = document.querySelector('[data-year]');
 if (year) year.textContent = new Date().getFullYear();
