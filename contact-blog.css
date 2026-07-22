@@ -16,5 +16,6 @@
 .contact-detail h3{margin:15px 0 6px;font-family:Marcellus,serif;font-size:29px;font-weight:400}
 .contact-detail p{margin:0;color:var(--muted);font-size:13px}
 .contact-detail a,.contact-detail button{display:inline-block;margin-top:15px;border:0;background:transparent;padding:0;color:var(--sea);cursor:pointer;font-size:12px;font-weight:700}
+.contact-email-image{display:block;width:min(100%,250px);height:auto;margin:13px 0 10px}
 @media (max-width:1000px){.blog-card{grid-template-columns:1fr;gap:36px}.contact.contact-direct{grid-template-columns:1fr}.contact-details{margin-top:15px}}
 @media (max-width:560px){.blog{padding-top:30px}.blog-card{padding:36px 27px}.blog-actions{min-width:0}.contact-detail{padding:25px}}
