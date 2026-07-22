@@ -37,10 +37,13 @@
     return Object.prototype.hasOwnProperty.call(copy, language) ? language : 'en';
   };
 
-  const applyMetadata = (text) => {
+  const applyMetadata = (text, language) => {
     document.title = text.title;
     const description = document.querySelector('meta[name="description"]');
     if (description) description.content = text.description;
+
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.href = `https://sy-rassvet.com/?lang=${language}`;
   };
 
   const applyContactText = (text) => {
@@ -104,8 +107,9 @@
   };
 
   const apply = () => {
-    const text = copy[currentLanguage()];
-    applyMetadata(text);
+    const language = currentLanguage();
+    const text = copy[language];
+    applyMetadata(text, language);
     applyContactText(text);
     applyEmailCard(text);
     applyEngineStart(text);
