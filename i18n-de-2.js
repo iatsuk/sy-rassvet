@@ -90,6 +90,6 @@ Object.assign(window.RASSVET_TRANSLATIONS_DE ||= {}, {
   "Sail wardrobe": "Segelgarderobe",
   "Mainsail, furling genoa and spinnaker": "Großsegel, Rollgenua und Spinnaker",
   "Mainsail with two reefing points, 140% genoa on a roller-furling system, and a spinnaker used only a few times and remaining in as-new condition.": "Großsegel mit zwei Reffreihen, 140-%-Genua auf Rollanlage und ein nur wenige Male genutzter Spinnaker in nahezu neuwertigem Zustand.",
-  "Navigation & radio": "Navigation und Funk",
-  "VHF radio and chartplotter": "UKW-Funkgerät und Kartenplotter"
+  "Navigation": "Navigation",
+  "Chartplotter and instruments": "Kartenplotter und Instrumente"
 });
