@@ -1,5 +1,5 @@
 Object.assign(window.RASSVET_TRANSLATIONS_DE ||= {}, {
-  "Nexus NX2500 VHF radio and Garmin GPSMAP 525 chartplotter with chart coverage from Germany to Svalbard, together with NASA Marine Clipper Wind, Depth and Log instruments and a Silva 100 compass.": "Nexus-NX2500-UKW-Funkgerät und Garmin-GPSMAP-525-Kartenplotter mit Kartenabdeckung von Deutschland bis Spitzbergen, dazu NASA-Marine-Clipper-Instrumente für Wind, Tiefe und Log sowie Silva-100-Kompass.",
+  "Garmin GPSMAP 525 chartplotter with chart coverage from Germany to Svalbard, together with NASA Marine Clipper Wind, Depth and Log instruments and a Silva 100 compass.": "Garmin-GPSMAP-525-Kartenplotter mit Kartenabdeckung von Deutschland bis Spitzbergen, dazu NASA-Marine-Clipper-Instrumente für Wind, Tiefe und Log sowie Silva-100-Kompass.",
   "Anchoring": "Ankern",
   "Two anchors": "Zwei Anker",
   "A 7.5 kg Bruce anchor and a 16 kg CQR anchor are included with the yacht.": "Ein 7,5-kg-Bruce-Anker und ein 16-kg-CQR-Anker werden mit der Yacht übergeben.",
@@ -32,7 +32,7 @@ Object.assign(window.RASSVET_TRANSLATIONS_DE ||= {}, {
   "Kiel, Germany": "Kiel, Deutschland",
   "Available by appointment. Additional photographs and the detailed handover inventory can be shared directly.": "Besichtigung nach Vereinbarung. Weitere Fotos und die detaillierte Übergabeinventarliste können direkt zugesandt werden.",
   "Asking price": "Angebotspreis",
-  "Reasonable offers considered after viewing.": "Angemessene Angebote werden nach der Besichtigung berücksichtigt.",
+  "Summer offer while the yacht remains afloat, before winter storage.": "Sommerangebot, solange die Yacht noch im Wasser liegt, vor dem Winterlager.",
   "Your name": "Ihr Name",
   "How may I contact you?": "Wie darf ich Sie kontaktieren?",
   "Email, Telegram or telephone": "E-Mail, Telegram oder Telefon",
