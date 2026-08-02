@@ -86,7 +86,7 @@ Object.assign(window.RASSVET_TRANSLATIONS_DE ||= {}, {
   "What is included with Rassvet": "Was mit Rassvet verkauft wird",
   "The principal equipment transferred with the yacht, grouped by system. The detailed handover inventory will be confirmed in the purchase agreement.": "Die wichtigste mit der Yacht übergebene Ausrüstung, nach Systemen geordnet. Das detaillierte Übergabeinventar wird im Kaufvertrag bestätigt.",
   "Propulsion": "Antrieb",
-  "Installed in 2005 with approximately 700 engine hours. Professionally serviced by Davids Werft in 2024, 2025 and 2026.": "2005 eingebaut, mit etwa 700 Motorstunden. 2024, 2025 und 2026 professionell durch Davids Werft gewartet.",
+  "Installed in 2005 with fewer than 750 engine hours. Professionally serviced by Davids Werft in 2024, 2025 and 2026.": "2005 eingebaut, mit weniger als 750 Motorstunden. 2024, 2025 und 2026 professionell durch Davids Werft gewartet.",
   "Sail wardrobe": "Segelgarderobe",
   "Mainsail, furling genoa and spinnaker": "Großsegel, Rollgenua und Spinnaker",
   "Mainsail with two reefing points, 140% genoa on a roller-furling system, and a spinnaker used only a few times and remaining in as-new condition.": "Großsegel mit zwei Reffreihen, 140-%-Genua auf Rollanlage und ein nur wenige Male genutzter Spinnaker in nahezu neuwertigem Zustand.",
