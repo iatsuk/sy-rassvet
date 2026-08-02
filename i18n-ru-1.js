@@ -29,7 +29,7 @@ Object.assign(window.RASSVET_TRANSLATIONS_RU ||= {}, {
   "Continuously maintained": "Постоянно обслуживалась",
   "Hull, deck, engine, rig, sails and onboard systems were improved throughout ownership, not hurriedly prepared just before sale.": "Корпус, палуба, двигатель, такелаж, паруса и бортовые системы улучшались в течение всего периода владения, а не были поспешно подготовлены перед продажей.",
   "Three owners since new": "Три владельца с постройки",
-  "The first owner kept the yacht from 1975 to 2021 under the name FULLSTAR, the second owned her from 2021 to 2023 as MONTEZUMA, and the current owner has owned and actively sailed her as RASSVET since 2023.": "У яхты было три владельца и три имени: первый владел ею с 1975 по 2021 год под именем FULLSTAR, второй — с 2021 по 2023 год под именем MONTEZUMA, а нынешний владелец владеет и активно ходит на ней под именем RASSVET с 2023 года.",
+  "The yacht has had three owners, three names and three home ports: FULLSTAR in Gothenburg from 1975 to 2021, MONTEZUMA in Kalmar from 2021 to 2023, and RASSVET in Kiel under the current ownership since 2023.": "У яхты было три владельца, три имени и три порта базирования: FULLSTAR в Гётеборге с 1975 по 2021 год, MONTEZUMA в Кальмаре с 2021 по 2023 год и RASSVET в Киле при нынешнем владельце с 2023 года.",
   "Ready for inspection": "Готова к осмотру",
   "The yacht is in Kiel. You can inspect her carefully, review the available records and confirm the handover inventory.": "Яхта находится в Киле. Ее можно внимательно осмотреть, изучить имеющиеся документы и сверить перечень передаваемого оборудования.",
   "Reason for sale": "Причина продажи",
