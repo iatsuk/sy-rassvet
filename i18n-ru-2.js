@@ -90,6 +90,6 @@ Object.assign(window.RASSVET_TRANSLATIONS_RU ||= {}, {
   "Sail wardrobe": "Комплект парусов",
   "Mainsail, furling genoa and spinnaker": "Грот, генуя на закрутке и спинакер",
   "Mainsail with two reefing points, 140% genoa on a roller-furling system, and a spinnaker used only a few times and remaining in as-new condition.": "Грот с двумя рифами, 140%-я генуя на закрутке и спинакер, использовавшийся всего несколько раз и сохранившийся почти в новом состоянии.",
-  "Navigation & radio": "Навигация и радио",
-  "VHF radio and chartplotter": "УКВ-радиостанция и картплоттер"
+  "Navigation": "Навигация",
+  "Chartplotter and instruments": "Картплоттер и приборы"
 });
