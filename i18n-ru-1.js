@@ -48,6 +48,8 @@ Object.assign(window.RASSVET_TRANSLATIONS_RU ||= {}, {
   "The dimensions and construction figures describe the original Ohlson 29 design. The propulsion and tank details below describe Rassvet as she is offered for sale today.": "Размеры и конструктивные данные относятся к исходному проекту Ohlson 29. Сведения о двигателе и танках ниже описывают Rassvet в ее нынешнем виде.",
   "Hull number": "Номер корпуса",
   "Design & construction": "Проект и конструкция",
+  "Model": "Модель",
+  "Builder": "Производитель",
   "Designer": "Конструктор",
   "Year built": "Год постройки",
   "Rig": "Парусное вооружение",
