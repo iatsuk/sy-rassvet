@@ -78,7 +78,7 @@ When English wording changes, update the corresponding entries in the German and
 The exact asking price is centralised in `gallery.js`:
 
 ```js
-const askingPrice = '€7,000';
+const askingPrice = '€6,900';
 ```
 
 Change this value only. The hero and contact sections use the same constant.
