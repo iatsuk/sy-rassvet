@@ -65,9 +65,9 @@ const includedItems = [
     description: 'Mainsail with two reefing points, 140% genoa on a roller-furling system, and a spinnaker used only a few times and remaining in as-new condition.'
   },
   {
-    category: 'Navigation & radio',
-    title: 'VHF radio and chartplotter',
-    description: 'Nexus NX2500 VHF radio and Garmin GPSMAP 525 chartplotter with chart coverage from Germany to Svalbard, together with NASA Marine Clipper Wind, Depth and Log instruments and a Silva 100 compass.'
+    category: 'Navigation',
+    title: 'Chartplotter and instruments',
+    description: 'Garmin GPSMAP 525 chartplotter with chart coverage from Germany to Svalbard, together with NASA Marine Clipper Wind, Depth and Log instruments and a Silva 100 compass.'
   },
   {
     category: 'Anchoring',
