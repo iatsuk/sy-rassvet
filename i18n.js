@@ -130,10 +130,10 @@
       ? `Foto öffnen: ${translateValue(openPhotoMatch[1])}`
       : `Открыть фотографию: ${translateValue(openPhotoMatch[1])}`;
 
-    const askingPriceMatch = source.match(/^Asking price (.+)\. Reasonable offers considered after viewing\.$/);
+    const askingPriceMatch = source.match(/^Asking price (.+)\. Summer offer while the yacht remains afloat, before winter storage\.$/);
     if (askingPriceMatch) return language === 'de'
-      ? `Angebotspreis ${askingPriceMatch[1]}. Angemessene Angebote werden nach der Besichtigung berücksichtigt.`
-      : `Цена ${askingPriceMatch[1]}. Разумный торг возможен после осмотра.`;
+      ? `Angebotspreis ${askingPriceMatch[1]}. Sommerangebot, solange die Yacht noch im Wasser liegt, vor dem Winterlager.`
+      : `Цена ${askingPriceMatch[1]}. Летнее предложение, пока яхта остается на воде, до подъема на зимнее хранение.`;
 
     const galleryCountMatch = source.match(/^(\d+) original photographs?, automatically resized for fast loading and available in full view\.$/);
     if (galleryCountMatch) return language === 'de'
