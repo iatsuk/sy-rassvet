@@ -29,7 +29,7 @@ Object.assign(window.RASSVET_TRANSLATIONS_DE ||= {}, {
   "Continuously maintained": "Laufend gepflegt",
   "Hull, deck, engine, rig, sails and onboard systems were improved throughout ownership, not hurriedly prepared just before sale.": "Rumpf, Deck, Motor, Rigg, Segel und Bordsysteme wurden während der gesamten Besitzzeit verbessert und nicht erst kurz vor dem Verkauf hastig hergerichtet.",
   "Three owners since new": "Drei Eigner seit dem Bau",
-  "The first owner kept Rassvet from her construction in 1975 until 2021, the second from 2021 to 2023, and the current owner has owned and actively sailed her since 2023.": "Der erste Eigner besaß Rassvet von ihrem Bau 1975 bis 2021, der zweite von 2021 bis 2023. Der heutige Eigner besitzt und segelt sie aktiv seit 2023.",
+  "The first owner kept the yacht from 1975 to 2021 under the name FULLSTAR, the second owned her from 2021 to 2023 as MONTEZUMA, and the current owner has owned and actively sailed her as RASSVET since 2023.": "Der erste Eigner besaß die Yacht von 1975 bis 2021 unter dem Namen FULLSTAR, der zweite von 2021 bis 2023 als MONTEZUMA. Der heutige Eigner besitzt und segelt sie seit 2023 aktiv als RASSVET.",
   "Ready for inspection": "Bereit zur Besichtigung",
   "The yacht is in Kiel. You can inspect her carefully, review the available records and confirm the handover inventory.": "Die Yacht liegt in Kiel. Sie können sie gründlich besichtigen, die vorhandenen Unterlagen einsehen und die Übergabeausrüstung prüfen.",
   "Reason for sale": "Verkaufsgrund",
