@@ -235,6 +235,132 @@ window.RASSVET_GALLERY = [
     "lead": false
   },
   {
+    "id": "04-01-img-5309",
+    "category": "Interior",
+    "caption": "Interior 1",
+    "alt": "Rassvet — Interior 1",
+    "thumbnail": {
+      "webp": "photos/generated/04-01-img-5309-thumb.webp",
+      "jpeg": "photos/generated/04-01-img-5309-thumb.jpg"
+    },
+    "full": {
+      "webp": "photos/generated/04-01-img-5309-full.webp",
+      "jpeg": "photos/generated/04-01-img-5309-full.jpg"
+    },
+    "width": 3024,
+    "height": 4032,
+    "portrait": true,
+    "lead": false
+  },
+  {
+    "id": "04-02-img-5314",
+    "category": "Interior",
+    "caption": "Interior 2",
+    "alt": "Rassvet — Interior 2",
+    "thumbnail": {
+      "webp": "photos/generated/04-02-img-5314-thumb.webp",
+      "jpeg": "photos/generated/04-02-img-5314-thumb.jpg"
+    },
+    "full": {
+      "webp": "photos/generated/04-02-img-5314-full.webp",
+      "jpeg": "photos/generated/04-02-img-5314-full.jpg"
+    },
+    "width": 4032,
+    "height": 3024,
+    "portrait": false,
+    "lead": false
+  },
+  {
+    "id": "04-03-img-5319",
+    "category": "Interior",
+    "caption": "Interior 3",
+    "alt": "Rassvet — Interior 3",
+    "thumbnail": {
+      "webp": "photos/generated/04-03-img-5319-thumb.webp",
+      "jpeg": "photos/generated/04-03-img-5319-thumb.jpg"
+    },
+    "full": {
+      "webp": "photos/generated/04-03-img-5319-full.webp",
+      "jpeg": "photos/generated/04-03-img-5319-full.jpg"
+    },
+    "width": 5712,
+    "height": 4284,
+    "portrait": false,
+    "lead": false
+  },
+  {
+    "id": "04-04-img-5321",
+    "category": "Interior",
+    "caption": "Interior 4",
+    "alt": "Rassvet — Interior 4",
+    "thumbnail": {
+      "webp": "photos/generated/04-04-img-5321-thumb.webp",
+      "jpeg": "photos/generated/04-04-img-5321-thumb.jpg"
+    },
+    "full": {
+      "webp": "photos/generated/04-04-img-5321-full.webp",
+      "jpeg": "photos/generated/04-04-img-5321-full.jpg"
+    },
+    "width": 4284,
+    "height": 5712,
+    "portrait": true,
+    "lead": false
+  },
+  {
+    "id": "04-05-img-5325",
+    "category": "Interior",
+    "caption": "Interior 5",
+    "alt": "Rassvet — Interior 5",
+    "thumbnail": {
+      "webp": "photos/generated/04-05-img-5325-thumb.webp",
+      "jpeg": "photos/generated/04-05-img-5325-thumb.jpg"
+    },
+    "full": {
+      "webp": "photos/generated/04-05-img-5325-full.webp",
+      "jpeg": "photos/generated/04-05-img-5325-full.jpg"
+    },
+    "width": 4032,
+    "height": 3024,
+    "portrait": false,
+    "lead": false
+  },
+  {
+    "id": "04-06-img-5331",
+    "category": "Interior",
+    "caption": "Interior 6",
+    "alt": "Rassvet — Interior 6",
+    "thumbnail": {
+      "webp": "photos/generated/04-06-img-5331-thumb.webp",
+      "jpeg": "photos/generated/04-06-img-5331-thumb.jpg"
+    },
+    "full": {
+      "webp": "photos/generated/04-06-img-5331-full.webp",
+      "jpeg": "photos/generated/04-06-img-5331-full.jpg"
+    },
+    "width": 3024,
+    "height": 4032,
+    "portrait": true,
+    "lead": false
+  },
+  {
+    "id": "04-07-img-5332",
+    "category": "Interior",
+    "caption": "Interior 7",
+    "alt": "Rassvet — Interior 7",
+    "thumbnail": {
+      "webp": "photos/generated/04-07-img-5332-thumb.webp",
+      "jpeg": "photos/generated/04-07-img-5332-thumb.jpg"
+    },
+    "full": {
+      "webp": "photos/generated/04-07-img-5332-full.webp",
+      "jpeg": "photos/generated/04-07-img-5332-full.jpg"
+    },
+    "width": 4032,
+    "height": 3024,
+    "portrait": false,
+    "lead": false
+  },
+  {
     "id": "05-01-img-6842",
     "category": "Engine and systems",
     "caption": "Engine and systems 1",
