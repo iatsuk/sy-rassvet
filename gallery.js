@@ -14,7 +14,7 @@
   const heroCopy = document.querySelector('.hero-copy');
   const contactCopy = document.querySelector('.contact-copy');
   const intro = document.querySelector('.intro');
-  const askingPrice = '€7,000';
+  const askingPrice = '€6,900';
 
   ['hero-photo.css', 'sale-price.css', 'sale-context.css', 'i18n.css'].forEach((href) => {
     if (document.querySelector(`link[href="${href}"]`)) return;
@@ -31,10 +31,10 @@
     const note = document.createElement('small');
 
     price.className = 'sale-price';
-    price.setAttribute('aria-label', `Asking price ${askingPrice}. Reasonable offers considered after viewing.`);
+    price.setAttribute('aria-label', `Asking price ${askingPrice}. Summer offer while the yacht remains afloat, before winter storage.`);
     label.textContent = 'Asking price';
     value.textContent = askingPrice;
-    note.textContent = 'Reasonable offers considered after viewing.';
+    note.textContent = 'Summer offer while the yacht remains afloat, before winter storage.';
     price.append(label, value, note);
     return price;
   };
