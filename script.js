@@ -57,7 +57,7 @@ const includedItems = [
   {
     category: 'Propulsion',
     title: 'Nanni Diesel N2.14',
-    description: 'Installed in 2005 with approximately 700 engine hours. Professionally serviced by Davids Werft in 2024, 2025 and 2026.'
+    description: 'Installed in 2005 with fewer than 750 engine hours. Professionally serviced by Davids Werft in 2024, 2025 and 2026.'
   },
   {
     category: 'Sail wardrobe',
