@@ -131,3 +131,10 @@
   };
   waitForTranslations();
 })();
+
+(() => {
+  if (document.querySelector('script[src="design-history.js"]')) return;
+  const script = document.createElement('script');
+  script.src = 'design-history.js';
+  document.body.append(script);
+})();
