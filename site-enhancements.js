@@ -138,3 +138,10 @@
   script.src = 'design-history.js';
   document.body.append(script);
 })();
+
+(() => {
+  if (document.querySelector('script[src="video-tour.js"]')) return;
+  const script = document.createElement('script');
+  script.src = 'video-tour.js';
+  document.body.append(script);
+})();
