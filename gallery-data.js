@@ -415,6 +415,24 @@ window.RASSVET_GALLERY = [
     "lead": false
   },
   {
+    "id": "05-04-img-8606",
+    "category": "Engine and systems",
+    "caption": "Engine and systems 4",
+    "alt": "Rassvet — Engine and systems 4",
+    "thumbnail": {
+      "webp": "photos/generated/05-04-img-8606-thumb.webp",
+      "jpeg": "photos/generated/05-04-img-8606-thumb.jpg"
+    },
+    "full": {
+      "webp": "photos/generated/05-04-img-8606-full.webp",
+      "jpeg": "photos/generated/05-04-img-8606-full.jpg"
+    },
+    "width": 3024,
+    "height": 4032,
+    "portrait": true,
+    "lead": false
+  },
+  {
     "id": "07-01-img-6660",
     "category": "Underwater hull",
     "caption": "Underwater hull 1",
