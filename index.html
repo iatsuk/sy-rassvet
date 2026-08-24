@@ -15,15 +15,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIINfQ3ynDgqZ+4IUN4qS0whxU6TS3MZas=" crossorigin="">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="hero-rassvet.css">
   <link rel="stylesheet" href="ownership-flow.css">
-  <link rel="stylesheet" href="onboard-systems.css">
   <link rel="stylesheet" href="new-chapter.css">
   <link rel="stylesheet" href="technical-specs.css">
+  <link rel="stylesheet" href="voyage-atlas.css">
   <link rel="stylesheet" href="gallery.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
   <script src="gallery-data.js" defer></script>
   <script src="script.js" defer></script>
+  <script src="voyage-atlas.js" defer></script>
   <script src="gallery.js" defer></script>
   <script src="site-enhancements.js" defer></script>
 </head>
@@ -39,7 +42,6 @@
       <a href="#about">The yacht</a>
       <a href="#timeline">Maintenance</a>
       <a href="#voyages">Voyages</a>
-      <a href="#onboard">On board</a>
       <a href="#gallery">Gallery</a>
       <a class="nav-cta" href="#new-chapter">New chapter</a>
     </nav>
@@ -49,7 +51,7 @@
     <section class="hero" id="top">
       <div class="hero-grid">
         <div class="hero-copy reveal">
-          <p class="eyebrow">Classic Swedish sailing yacht · 1975</p>
+          <p class="eyebrow">Swedish-designed · Finnish-built · 1975</p>
           <h1>The dawn of a journey under sail.</h1>
           <p class="hero-lead">Ohlson 29 <strong>Rassvet</strong>, hull 170. This site preserves her 2023–2026 chapter in Kiel: four cruising seasons, 3,100 nautical miles and the work completed along the way.</p>
           <div class="hero-actions">
@@ -193,7 +195,6 @@
 
         <div class="current-yacht" aria-label="Current details for Rassvet">
           <div><span>This yacht</span><strong>Nanni Diesel N2.14</strong><small>installed in 2005</small></div>
-          <div><span>Engine hours</span><strong>&lt; 750 h</strong></div>
           <div><span>Diesel tank</span><strong>40 L</strong></div>
           <div><span>Freshwater tank</span><strong>80 L</strong></div>
           <div><span>Black-water tank</span><strong>40 L</strong></div>
@@ -284,7 +285,31 @@
         </div>
         <p>Not merely a list of attractive harbours, but real use in varied conditions: calm, fog, strong winds and short, steep head seas.</p>
       </div>
-      <div class="route-board reveal">
+      <div class="voyage-atlas reveal" data-voyage-atlas hidden>
+        <header class="voyage-atlas-header">
+          <div>
+            <p class="route-meta">GPX archive · 2023–2026</p>
+            <h3>Recorded tracks</h3>
+          </div>
+          <dl class="voyage-atlas-totals" aria-label="Published GPX archive totals">
+            <div><dt data-atlas-track-count>0</dt><dd>tracks</dd></div>
+            <div><dt data-atlas-distance>0 nm</dt><dd>recorded distance</dd></div>
+          </dl>
+        </header>
+        <div class="voyage-year-filters" data-voyage-year-filters aria-label="Filter tracks by year"></div>
+        <div class="voyage-atlas-layout">
+          <div class="voyage-map-wrap">
+            <div class="voyage-map-toolbar" aria-label="Voyage map controls">
+              <button type="button" data-map-zoom-out aria-label="Zoom out">−</button>
+              <button type="button" data-map-reset>All tracks</button>
+              <button type="button" data-map-zoom-in aria-label="Zoom in">+</button>
+            </div>
+            <div id="voyage-map" class="voyage-map-panel" aria-label="Map of Rassvet voyages recorded by Andrei"></div>
+          </div>
+          <aside class="voyage-track-list" data-voyage-items aria-label="Recorded voyages"></aside>
+        </div>
+      </div>
+      <div class="route-board reveal" data-voyage-fallback>
         <div class="route-map" aria-hidden="true">
           <svg viewBox="0 0 720 520">
             <path class="coast" d="M68 437 C148 398 122 330 187 300 C240 276 218 221 273 185 C330 150 386 180 432 126 C477 73 546 87 648 39"/>
@@ -300,39 +325,6 @@
           <article><p class="route-meta">2024 · Solo sailing</p><h3>Lübeck → Kiel</h3><p>A solo passage of approximately 85 nautical miles completed in 16 hours.</p></article>
         </div>
       </div>
-    </section>
-
-    <section class="section included" id="onboard" aria-labelledby="included-title">
-      <div class="included-header reveal">
-        <div>
-          <p class="eyebrow">On board in 2026</p>
-          <h2 id="included-title">Systems and sail wardrobe at handover</h2>
-        </div>
-        <p>A snapshot of the principal equipment and fixed systems aboard Rassvet at the end of the 2023–2026 chapter.</p>
-      </div>
-      <div class="included-grid reveal">
-        <article class="included-card">
-          <span>Propulsion</span>
-          <h3>Nanni Diesel N2.14</h3>
-          <p>Installed in 2005 with fewer than 750 engine hours. Professionally serviced by Davids Werft in 2024, 2025 and 2026. The engine starts reliably on the first attempt.</p>
-        </article>
-        <article class="included-card">
-          <span>Sail wardrobe</span>
-          <h3>Three sails for coastal cruising</h3>
-          <p>Mainsail with two reefing points, 140% furling genoa and a spinnaker used only a few times and remaining in near-new condition.</p>
-        </article>
-        <article class="included-card">
-          <span>Energy system</span>
-          <h3>Solar and shore-power charging</h3>
-          <p>Two 100 W solar panels, Victron Energy 15 A MPPT controller, Victron 230 V / 30 A charger and two 105 Ah AGM batteries.</p>
-        </article>
-        <article class="included-card">
-          <span>Fixed onboard systems</span>
-          <h3>Navigation, heating and utilities</h3>
-          <p>NASA Marine Clipper Wind, Depth and Log instruments, Silva 100 compass, Wallas diesel heater, LED lighting and electric bilge pump.</p>
-        </article>
-      </div>
-      <p class="included-note reveal">This is a historical overview rather than a current inventory.</p>
     </section>
 
     <section class="section gallery" id="gallery">

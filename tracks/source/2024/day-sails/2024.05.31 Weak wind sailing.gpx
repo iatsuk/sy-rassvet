@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="SailTies" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v2 http://www.garmin.com/xmlschemas/TrackPointExtensionv2.xsd">
+  <metadata>
+    <name>Weak wind sailing</name>
+    <desc>Distance: 18.6 NM • Duration: 6h 29m • Avg speed: 2.9 kn • Vessel: Rassvet • Rangenberg, Germany</desc>
+    <author><name>SailTies</name><link href="https://sailties.com"><text>SailTies</text></link></author>
+    <link href="https://sailties.com"><text>SailTies</text></link>
+    <time>2024-05-31T14:34:00.000Z</time>
+    <bounds minlat="53.894076" minlon="10.768081" maxlat="53.983426" maxlon="10.919873"/>
+  </metadata>
+  <trk>
+    <name>Weak wind sailing</name>
+    <desc>Distance: 18.6 NM • Duration: 6h 29m • Avg speed: 2.9 kn • Vessel: Rassvet • Rangenberg, Germany</desc>
+    <type>sailing</type>
+    <trkseg>
+      <trkpt lat="53.896083" lon="10.771986">
+        <time>2024-05-31T14:34:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.894451" lon="10.786878">
+        <time>2024-05-31T14:44:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.894076" lon="10.808766">
+        <time>2024-05-31T14:54:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.897595" lon="10.828678">
+        <time>2024-05-31T15:04:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.904355" lon="10.845523">
+        <time>2024-05-31T15:14:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.911553" lon="10.861358">
+        <time>2024-05-31T15:24:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.920963" lon="10.871895">
+        <time>2024-05-31T15:34:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.932013" lon="10.86962">
+        <time>2024-05-31T15:44:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.944576" lon="10.86344">
+        <time>2024-05-31T15:54:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.955725" lon="10.870886">
+        <time>2024-05-31T16:04:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.961443" lon="10.891485">
+        <time>2024-05-31T16:14:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.963095" lon="10.910883">
+        <time>2024-05-31T16:24:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.966668" lon="10.916226">
+        <time>2024-05-31T16:34:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.974831" lon="10.91481">
+        <time>2024-05-31T16:44:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.976108" lon="10.919873">
+        <time>2024-05-31T16:54:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.981826" lon="10.9135">
+        <time>2024-05-31T17:04:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.983426" lon="10.900518">
+        <time>2024-05-31T17:14:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.979681" lon="10.894103">
+        <time>2024-05-31T17:24:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.97407" lon="10.894853">
+        <time>2024-05-31T17:34:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.968213" lon="10.894468">
+        <time>2024-05-31T17:44:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.961431" lon="10.897065">
+        <time>2024-05-31T17:54:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.960283" lon="10.884405">
+        <time>2024-05-31T18:04:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.958835" lon="10.876851">
+        <time>2024-05-31T18:14:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.956958" lon="10.870715">
+        <time>2024-05-31T18:24:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.952935" lon="10.86359">
+        <time>2024-05-31T18:34:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.944931" lon="10.86241">
+        <time>2024-05-31T18:44:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.940531" lon="10.86505">
+        <time>2024-05-31T18:54:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.932066" lon="10.868461">
+        <time>2024-05-31T19:04:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.920705" lon="10.870585">
+        <time>2024-05-31T19:14:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.912905" lon="10.859921">
+        <time>2024-05-31T19:24:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.907348" lon="10.848311">
+        <time>2024-05-31T19:34:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.903153" lon="10.838185">
+        <time>2024-05-31T19:44:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.898818" lon="10.830545">
+        <time>2024-05-31T19:54:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.8962" lon="10.820718">
+        <time>2024-05-31T20:04:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.89486" lon="10.81132">
+        <time>2024-05-31T20:14:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.894785" lon="10.801878">
+        <time>2024-05-31T20:24:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.895063" lon="10.781986">
+        <time>2024-05-31T20:44:00.000Z</time>
+      </trkpt>
+      <trkpt lat="53.896598" lon="10.768081">
+        <time>2024-05-31T21:03:45.000Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

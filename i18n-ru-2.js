@@ -77,12 +77,5 @@ Object.assign(window.RASSVET_TRANSLATIONS_RU ||= {}, {
   "Bay of Lübeck": "Любекская бухта",
   "Mecklenburg coast cruise": "Путешествие вдоль побережья Мекленбурга",
   "Sweden to Germany": "Из Швеции в Германию",
-  "Delivery voyage to Lübeck": "Перегон в Любек",
-  "Propulsion": "Двигатель",
-  "Installed in 2005 with fewer than 750 engine hours. Professionally serviced by Davids Werft in 2024, 2025 and 2026.": "Установлен в 2005 году, наработка менее 750 моточасов. Профессионально обслуживался на Davids Werft в 2024, 2025 и 2026 годах.",
-  "Sail wardrobe": "Комплект парусов",
-  "Mainsail, furling genoa and spinnaker": "Грот, генуя на закрутке и спинакер",
-  "Mainsail with two reefing points, 140% genoa on a roller-furling system, and a spinnaker used only a few times and remaining in as-new condition.": "Грот с двумя рифами, 140%-я генуя на закрутке и спинакер, использовавшийся всего несколько раз и сохранившийся почти в новом состоянии.",
-  "Navigation": "Навигация",
-  "Chartplotter and instruments": "Картплоттер и приборы"
+  "Delivery voyage to Lübeck": "Перегон в Любек"
 });
