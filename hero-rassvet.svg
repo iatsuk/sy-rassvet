@@ -1,66 +1,53 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 688" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="title desc">
   <title id="title">Ohlson 29 Rassvet profile</title>
-  <desc id="desc">A simplified side elevation of the yellow Ohlson 29 Rassvet, showing her low coachroof, fin keel and separate rudder.</desc>
+  <desc id="desc">A simplified side elevation of the Ohlson 29 Rassvet under sail, based on the supplied technical profile.</desc>
 
   <defs>
-    <linearGradient id="topsides" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#f8cf4e"/>
-      <stop offset="1" stop-color="#e4a80d"/>
+    <linearGradient id="sailFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fffdf7" stop-opacity=".92"/>
+      <stop offset="1" stop-color="#eee9dc" stop-opacity=".78"/>
     </linearGradient>
-    <linearGradient id="underbody" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#163f4b"/>
-      <stop offset="1" stop-color="#071b24"/>
+    <linearGradient id="topsidesFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6ca45"/>
+      <stop offset="1" stop-color="#e8ae18"/>
     </linearGradient>
-    <filter id="softShadow" x="-20%" y="-30%" width="140%" height="180%">
-      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#071b24" flood-opacity=".2"/>
-    </filter>
+    <linearGradient id="underbodyFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fffefa"/>
+      <stop offset="1" stop-color="#e9e6de"/>
+    </linearGradient>
+
+    <path id="hullProfile" d="M87 582.274 C140.288 580.196 184.353 583.313 226.368 588.509 C288.879 595.783 356.514 593.705 418 575 C401.604 590.587 380.084 599.94 350.365 605.136 C337.043 608.253 327.82 617.606 319.622 630.075 L296.053 665.407 C287.854 677.877 272.483 682.033 255.062 680.994 C231.492 680.994 208.947 677.877 192.551 674.759 C186.402 673.72 186.402 669.563 192.551 666.446 L206.898 659.172 L216.121 623.84 C182.303 617.606 141.313 611.371 92.124 612.41 Z"/>
+    <path id="rudderProfile" d="M52 585 C61 584 71 585 80 588 L79 626 C79 635 74 639 66 640 L52 642 Z"/>
   </defs>
 
-  <g filter="url(#softShadow)">
-    <!-- Low cabin trunk and cockpit coaming, based on the Ohlson 29 side elevation. -->
-    <path d="M250 229 L284 224 L318 184 Q326 173 343 171 L525 171 Q543 173 557 187 L586 217 L773 217 L792 230 Z"
-          fill="#f8f4e9" stroke="#102f39" stroke-width="4" stroke-linejoin="round"/>
-    <path d="M345 183 H388 V212 H338 Z M405 183 H450 V212 H401 Z M468 183 H513 L548 212 H466 Z"
-          fill="#244f59" opacity=".92"/>
-    <path d="M688 216 H770" fill="none" stroke="#102f39" stroke-width="5" stroke-linecap="round"/>
-
-    <!-- Yellow topsides. Bow is to the right. -->
-    <path d="M96 235
-             C180 241 260 240 338 233
-             C466 222 604 220 742 224
-             C882 227 1012 215 1134 187
-             C1114 224 1081 263 1035 293
-             C971 335 880 359 765 369
-             C619 382 471 376 341 359
-             C236 345 158 321 117 286
-             C101 272 94 253 96 235 Z"
-          fill="url(#topsides)" stroke="#071b24" stroke-width="5" stroke-linejoin="round"/>
-
-    <!-- Characteristic dark sheer stripe. -->
-    <path d="M113 260 C307 268 499 252 692 251 C846 251 988 234 1103 207"
-          fill="none" stroke="#071b24" stroke-width="13" stroke-linecap="round" opacity=".92"/>
-
-    <!-- Fin keel and separate rudder. -->
-    <path d="M470 369
-             C488 420 507 489 535 548
-             C576 561 632 558 680 538
-             C706 486 720 423 724 371
-             C641 379 554 379 470 369 Z"
-          fill="url(#underbody)" stroke="#071b24" stroke-width="4" stroke-linejoin="round"/>
-    <path d="M178 326
-             C183 367 182 416 166 462
-             C140 451 119 432 108 406
-             L119 291
-             C135 306 154 317 178 326 Z"
-          fill="url(#underbody)" stroke="#071b24" stroke-width="4" stroke-linejoin="round"/>
-
-    <!-- Small deck and hull details. -->
-    <path d="M243 228 H803" fill="none" stroke="#071b24" stroke-width="4" stroke-linecap="round"/>
-    <circle cx="824" cy="244" r="7" fill="#f8f4e9" stroke="#071b24" stroke-width="3"/>
-    <circle cx="861" cy="242" r="7" fill="#f8f4e9" stroke="#071b24" stroke-width="3"/>
-    <text x="735" y="315" text-anchor="middle" fill="#071b24" font-family="Manrope, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="8">RASSVET</text>
+  <g fill="url(#sailFill)" stroke="#10232b" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="3.2" d="M260 27 L259 482 L110 487 C144 381 181 268 219 160 C235 113 249 68 260 27 Z"/>
+    <path stroke-width="3.2" d="M309 155 L433 514 L332 491 C339 420 342 347 335 275 C331 230 321 190 309 155 Z"/>
   </g>
 
-  <path d="M60 493 C190 472 316 477 433 497 C568 520 697 517 818 491 C936 466 1043 468 1147 489"
-        fill="none" stroke="#0d3c49" stroke-width="4" stroke-linecap="round" opacity=".24"/>
+  <g fill="none" stroke="#10232b" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="2.4" d="M265 22 L434 519"/>
+    <path stroke-width="5" d="M108 488 L270 497"/>
+  </g>
+
+  <path fill="#10232b" stroke="#10232b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M261 518 L259 27.722 C259.667 21.224 261.333 17.65 264 17 C266.667 17.65 268.333 21.224 269 27.722 L271 518 Z"/>
+
+  <g fill="none" stroke="#10232b" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="3.2" d="M47 537 C112 534 177 531 244 531 C318 531 384 528 449 523"/>
+    <path stroke-width="3.2" d="M126 531 L150.773 519 C192.886 517 259.773 517 304.364 520 L344 531"/>
+  </g>
+
+  <g fill="#10232b" stroke="#10232b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M162 523 C174 520 196 520 208 523 L204 528 L166 528 Z"/>
+    <path d="M222 524.241 C228 522.586 239 522.586 245 524.241 L243 527 L224 527 Z"/>
+    <path d="M255 524.241 C261 522.586 272 522.586 278 524.241 L276 527 L257 527 Z"/>
+  </g>
+
+  <use href="#rudderProfile" fill="url(#underbodyFill)" stroke="#10232b" stroke-width="2" stroke-linejoin="round"/>
+  <use href="#hullProfile" fill="url(#underbodyFill)" stroke="#10232b" stroke-width="2" stroke-linejoin="round"/>
+
+  <!-- Yellow topsides and white underwater body follow the supplied profile as separate contours. -->
+  <path fill="url(#topsidesFill)" stroke="#10232b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M22 574 C29 561 36 546 43 538 C114 537 186 534 258 533 C329 533 397 530 461 523 C457 532 453 540 448 547 C438 562 425 576 403 587 C306 593 204 593 93 590 L50 588 C39 586 29 581 22 574 Z"/>
+
+  <path fill="none" stroke="#10232b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M37 545 C155 547 300 544 450 532"/>
 </svg>
