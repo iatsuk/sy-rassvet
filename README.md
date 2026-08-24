@@ -1,14 +1,14 @@
 # S/Y Rassvet
 
-Source code and content for the sale website of **S/Y Rassvet**, an Ohlson 29 sailing yacht based in Kiel, Germany.
+Source code and content for the documented history of **S/Y Rassvet**, Ohlson 29 hull 170.
 
 Live website: **https://sy-rassvet.com**
 
 ## About the project
 
-This repository contains a static, multilingual website built with plain HTML, CSS and JavaScript. It presents the yacht's specifications, maintenance history, cruising record, included equipment, photographs, asking price and contact details.
+This repository contains a static, multilingual archive of Rassvet's design, maintenance, voyages, onboard systems and photographs. It records the yacht's chapter in Kiel under Andrei's ownership from 2023 to 2026 and her handover to Janne and Rabea in August 2026.
 
-The site is published through GitHub Pages from the repository's `main` branch. No application server, database, analytics service or client-side framework is required.
+The site is built with plain HTML, CSS and JavaScript and is published through GitHub Pages from the repository's `main` branch. It does not use an application server, database, analytics service or client-side framework.
 
 ## Features
 
@@ -17,6 +17,7 @@ The site is published through GitHub Pages from the repository's `main` branch. 
 - automatic initial language selection from browser preferences
 - manual `EN / DE / RU` language selector with the choice stored locally
 - documented maintenance timeline and cruising history
+- historical snapshot of the yacht's systems in 2026
 - responsive image gallery with a full-screen photo viewer
 - generated WebP and JPEG gallery assets
 - custom domain and HTTPS through GitHub Pages
@@ -26,15 +27,17 @@ The site is published through GitHub Pages from the repository's `main` branch. 
 ```text
 index.html                  Main page structure and English source content
 styles.css                  Core layout and visual design
-script.js                   Dynamic voyage, inventory, blog and contact content
-gallery.js                  Sale context, asking price, gallery and photo viewer
+new-chapter.css             August 2026 handover and farewell section
+onboard-systems.css         Historical onboard-systems section
+script.js                   Dynamic voyage, systems and logbook content
+gallery.js                  Hero photograph, gallery and photo viewer
 gallery-data.js             Generated gallery manifest
 gallery.css                 Gallery grid and viewer styles
 i18n.js                     Language detection and translation runtime
 i18n-de-*.js                German translation dictionaries
 i18n-ru-*.js                Russian translation dictionaries
 photos/source/              Original photographs grouped by category
-photos/generated/           Optimised gallery images generated from the originals
+photos/generated/           Optimised gallery images generated from originals
 tools/build_gallery.py      Gallery asset and manifest generator
 CNAME                       GitHub Pages custom domain
 ```
@@ -69,23 +72,9 @@ A previously selected language is stored in `localStorage`. Clear the `rassvet-l
 
 ## Editing website content
 
-English is the canonical source language. Most static content is in `index.html`, while some dynamically rendered sections are defined in `script.js` and `gallery.js`.
+English is the canonical source language. Most static content is in `index.html`, while dynamically rendered sections are defined in `script.js`, `gallery.js`, `design-history.js` and `video-tour.js`.
 
 When English wording changes, update the corresponding entries in the German and Russian translation dictionaries. The translation runtime also observes content added dynamically after page load.
-
-### Updating the asking price
-
-The exact asking price is centralised in `gallery.js`:
-
-```js
-const askingPrice = '€6,900';
-```
-
-Change this value only. The hero and contact sections use the same constant.
-
-### Updating contact details
-
-Contact links and labels are defined in `script.js`. Check both the dynamically rendered contact section and the message template used by the contact interaction.
 
 ## Managing photographs
 
@@ -161,8 +150,7 @@ The `www.sy-rassvet.com` DNS record redirects visitors to the apex domain.
 Before merging website changes, verify:
 
 - all three language versions render without untranslated English fragments;
-- navigation and contact links work;
-- the asking price is consistent in all visible locations;
+- navigation links work;
 - gallery thumbnails load and open in the full-screen viewer;
 - portrait and landscape photographs remain centred;
 - keyboard controls work in the viewer (`Escape`, left arrow and right arrow);
@@ -171,4 +159,4 @@ Before merging website changes, verify:
 
 ## Ownership and content
 
-The website and repository describe a privately owned yacht offered for sale. Photographs, maintenance records and sale information belong to the yacht owner unless otherwise stated.
+The website is a historical archive. Photographs, maintenance records and original writing from the 2023–2026 chapter belong to their respective authors unless otherwise stated.

@@ -1,7 +1,6 @@
 const header = document.querySelector('[data-header]');
 const menuButton = document.querySelector('[data-menu-button]');
 const nav = document.querySelector('[data-nav]');
-const toast = document.querySelector('[data-toast]');
 
 const voyages = [
   {
@@ -112,7 +111,7 @@ const createVoyageOverview = () => {
   kicker.textContent = 'Cruising record';
   distance.className = 'overview-distance';
   distance.textContent = '3,000 nm';
-  distanceLabel.textContent = 'sailed under the present ownership';
+  distanceLabel.textContent = "sailed during Andrei's ownership";
   distance.append(distanceLabel);
   top.append(kicker, distance);
 
@@ -151,7 +150,7 @@ const createVoyageOverview = () => {
 
   const note = document.createElement('p');
   note.className = 'overview-note';
-  note.textContent = 'Sailed and recorded by the current owner between 2023 and 2026.';
+  note.textContent = 'Sailed and recorded by Andrei between 2023 and 2026.';
 
   overview.append(top, stats, grounds, note);
   formerMap.replaceWith(overview);
@@ -183,7 +182,7 @@ const renderVoyages = () => {
 
   const voyageSummary = document.querySelector('.voyages-header > p');
   if (voyageSummary) {
-    voyageSummary.textContent = '3,000 nautical miles sailed aboard Rassvet under the present ownership, across the Baltic Sea, North Sea, Danish islands, Kattegat, Skagerrak and Dutch inland waterways.';
+    voyageSummary.textContent = "3,000 nautical miles sailed aboard Rassvet during Andrei's ownership, across the Baltic Sea, North Sea, Danish islands, Kattegat, Skagerrak and Dutch inland waterways.";
   }
 
   const heroFacts = document.querySelector('.hero-facts');
@@ -225,49 +224,17 @@ const renderIncludedInventory = () => {
   grid.replaceChildren(fragment);
 
   const heading = document.querySelector('#included-title');
-  if (heading) heading.textContent = 'What is included with Rassvet';
+  if (heading) heading.textContent = 'Systems aboard Rassvet in 2026';
 
   const summary = document.querySelector('.included-header > p');
   if (summary) {
-    summary.textContent = 'The principal equipment transferred with the yacht, grouped by system. The detailed handover inventory will be confirmed in the purchase agreement.';
+    summary.textContent = 'A historical snapshot of the principal equipment and fixed systems aboard Rassvet at the end of the 2023–2026 chapter.';
   }
 };
 
-const createContactDetail = ({ label, title, text, link, linkText, copyValue }) => {
-  const article = document.createElement('article');
-  const category = document.createElement('span');
-  const heading = document.createElement('h3');
-  const description = document.createElement('p');
-
-  article.className = 'contact-detail';
-  category.textContent = label;
-  heading.textContent = title;
-  description.textContent = text;
-  article.append(category, heading, description);
-
-  if (link) {
-    const anchor = document.createElement('a');
-    anchor.href = link;
-    anchor.target = '_blank';
-    anchor.rel = 'noreferrer';
-    anchor.textContent = linkText;
-    article.append(anchor);
-  } else if (copyValue) {
-    const button = document.createElement('button');
-    button.type = 'button';
-    button.dataset.copyContact = '';
-    button.dataset.contact = copyValue;
-    button.textContent = `Copy ${copyValue}`;
-    article.append(button);
-  }
-
-  return article;
-};
-
-const renderBlogAndContact = () => {
+const renderBlog = () => {
   const gallery = document.querySelector('#gallery');
-  const contact = document.querySelector('#contact');
-  if (!contact) return;
+  if (!gallery) return;
 
   if (nav && !nav.querySelector('a[href="#blog"]')) {
     const blogLink = document.createElement('a');
@@ -296,7 +263,7 @@ const renderBlogAndContact = () => {
     eyebrow.textContent = 'Owner’s logbook';
     heading.id = 'blog-title';
     heading.textContent = 'The yacht’s story has been documented in public';
-    description.textContent = 'The Telegram channel contains detailed Russian-language posts about Rassvet’s voyages, maintenance, repairs, failures and improvements throughout the present ownership.';
+    description.textContent = 'The Telegram channel contains detailed Russian-language posts about Rassvet’s voyages, maintenance, repairs, failures and improvements between 2023 and 2026.';
     actions.className = 'blog-actions';
     link.className = 'button button-primary';
     link.href = 'https://t.me/deelstuff';
@@ -312,94 +279,13 @@ const renderBlogAndContact = () => {
     gallery.before(blog);
   }
 
-  contact.className = 'section contact contact-direct';
-
-  const contactCopy = document.createElement('div');
-  const eyebrow = document.createElement('p');
-  const heading = document.createElement('h2');
-  const description = document.createElement('p');
-  const actions = document.createElement('div');
-  const telegram = document.createElement('a');
-  const instagram = document.createElement('a');
-
-  contactCopy.className = 'contact-copy reveal';
-  eyebrow.className = 'eyebrow';
-  eyebrow.textContent = 'Viewing in Kiel';
-  heading.textContent = 'Would you like to see Rassvet?';
-  description.textContent = 'Telegram is the preferred way to ask questions or arrange a viewing. Instagram is available as an alternative. Messages in English or Russian are welcome.';
-  actions.className = 'contact-links';
-
-  telegram.className = 'button button-primary';
-  telegram.href = 'https://t.me/aiatsuk';
-  telegram.target = '_blank';
-  telegram.rel = 'noreferrer';
-  telegram.textContent = 'Message on Telegram';
-
-  instagram.className = 'button button-ghost';
-  instagram.href = 'https://instagram.com/yatsukav';
-  instagram.target = '_blank';
-  instagram.rel = 'noreferrer';
-  instagram.textContent = 'Open Instagram';
-
-  actions.append(telegram, instagram);
-  contactCopy.append(eyebrow, heading, description, actions);
-
-  const details = document.createElement('div');
-  details.className = 'contact-details reveal';
-  details.append(
-    createContactDetail({
-      label: 'Preferred contact',
-      title: 'Telegram',
-      text: '@aiatsuk',
-      copyValue: '@aiatsuk'
-    }),
-    createContactDetail({
-      label: 'Alternative',
-      title: 'Instagram',
-      text: '@yatsukav',
-      link: 'https://instagram.com/yatsukav',
-      linkText: 'Open profile'
-    }),
-    createContactDetail({
-      label: 'Viewing',
-      title: 'Kiel, Germany',
-      text: 'Available by appointment. Additional photographs and the detailed handover inventory can be shared directly.'
-    })
-  );
-
-  contact.replaceChildren(contactCopy, details);
-};
-
-const showToast = (message) => {
-  toast.textContent = message;
-  toast.classList.add('is-visible');
-  window.clearTimeout(showToast.timer);
-  showToast.timer = window.setTimeout(() => toast.classList.remove('is-visible'), 2600);
-};
-
-const copyText = async (text) => {
-  try {
-    await navigator.clipboard.writeText(text);
-    return true;
-  } catch {
-    const textarea = document.createElement('textarea');
-    textarea.value = text;
-    textarea.setAttribute('readonly', '');
-    textarea.style.position = 'fixed';
-    textarea.style.opacity = '0';
-    document.body.appendChild(textarea);
-    textarea.select();
-    const success = document.execCommand('copy');
-    textarea.remove();
-    return success;
-  }
 };
 
 loadStylesheet('voyage-overview.css');
-loadStylesheet('contact-blog.css');
+loadStylesheet('logbook.css');
 renderVoyages();
 renderIncludedInventory();
-renderBlogAndContact();
+renderBlog();
 
 window.addEventListener('scroll', () => {
   header.classList.toggle('is-scrolled', window.scrollY > 20);
@@ -427,12 +313,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12, rootMargin: '0px 0px -35px' });
 
 document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
-
-document.querySelector('[data-copy-contact]')?.addEventListener('click', async (event) => {
-  const contact = event.currentTarget.dataset.contact;
-  const copied = await copyText(contact);
-  showToast(copied ? `Contact ${contact} copied` : `Contact: ${contact}`);
-});
 
 const year = document.querySelector('[data-year]');
 if (year) year.textContent = new Date().getFullYear();
