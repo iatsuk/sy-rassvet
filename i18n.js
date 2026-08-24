@@ -3,8 +3,8 @@
   const storageKey = 'rassvet-language';
   const languageNames = { en: 'English', de: 'Deutsch', ru: 'Русский' };
   const translationFiles = {
-    de: ['i18n-de-1.js', 'i18n-de-2.js', 'i18n-de-3.js'],
-    ru: ['i18n-ru-1.js', 'i18n-ru-2.js', 'i18n-ru-3.js']
+    de: ['i18n-de-1.js', 'i18n-de-2.js', 'i18n-de-3.js', 'i18n-de-4.js'],
+    ru: ['i18n-ru-1.js', 'i18n-ru-2.js', 'i18n-ru-3.js', 'i18n-ru-4.js']
   };
 
   const normalizeLanguage = (value) => {
@@ -119,30 +119,15 @@
     const copyMatch = source.match(/^Copy (.+)$/);
     if (copyMatch) return language === 'de' ? `${copyMatch[1]} kopieren` : `Копировать ${copyMatch[1]}`;
 
-    const copiedMatch = source.match(/^Contact (.+) copied$/);
-    if (copiedMatch) return language === 'de' ? `Kontakt ${copiedMatch[1]} kopiert` : `Контакт ${copiedMatch[1]} скопирован`;
-
-    const contactMatch = source.match(/^Contact: (.+)$/);
-    if (contactMatch) return language === 'de' ? `Kontakt: ${contactMatch[1]}` : `Контакт: ${contactMatch[1]}`;
-
     const openPhotoMatch = source.match(/^Open photograph: (.+)$/);
     if (openPhotoMatch) return language === 'de'
       ? `Foto öffnen: ${translateValue(openPhotoMatch[1])}`
       : `Открыть фотографию: ${translateValue(openPhotoMatch[1])}`;
 
-    const askingPriceMatch = source.match(/^Asking price (.+)\. Summer offer while the yacht remains afloat, before winter storage\.$/);
-    if (askingPriceMatch) return language === 'de'
-      ? `Angebotspreis ${askingPriceMatch[1]}. Sommerangebot, solange die Yacht noch im Wasser liegt, vor dem Winterlager.`
-      : `Цена ${askingPriceMatch[1]}. Летнее предложение, пока яхта остается на воде, до подъема на зимнее хранение.`;
-
     const galleryCountMatch = source.match(/^(\d+) original photographs?, automatically resized for fast loading and available in full view\.$/);
     if (galleryCountMatch) return language === 'de'
       ? `${galleryCountMatch[1]} Originalfotos, automatisch für schnelles Laden verkleinert und in voller Ansicht verfügbar.`
       : `${galleryCountMatch[1]} оригинальных фотографий, автоматически оптимизированных для быстрой загрузки и доступных в полном размере.`;
-
-    if (source === 'Message copied. Opening Telegram…') {
-      return language === 'de' ? 'Nachricht kopiert. Telegram wird geöffnet …' : 'Сообщение скопировано. Открываю Telegram…';
-    }
 
     return source;
   };
@@ -203,10 +188,10 @@
   };
 
   const updateDocumentMetadata = () => {
-    document.title = translateValue('Ohlson 29 Rassvet — sailing yacht for sale');
+    document.title = translateValue('Ohlson 29 Rassvet — history, refit and voyages');
     const description = document.querySelector('meta[name="description"]');
     if (description) {
-      description.content = translateValue('Ohlson 29 Rassvet — a well-maintained classic sailing yacht in Kiel with a documented maintenance history, Nanni diesel engine and proven 3,000-nautical-mile cruising record.');
+      description.content = translateValue("The documented story of Ohlson 29 Rassvet: her design, maintenance, voyages and 2023–2026 chapter under Andrei's ownership.");
     }
   };
 

@@ -39,8 +39,7 @@
     if (document.querySelector('#video-tour')) return;
 
     const gallery = document.querySelector('#gallery');
-    const contact = document.querySelector('#contact');
-    if (!gallery || !contact) return;
+    if (!gallery) return;
 
     const section = document.createElement('section');
     const inner = document.createElement('div');
@@ -77,7 +76,7 @@
     frame.append(iframe);
     inner.append(text, frame);
     section.append(inner);
-    contact.before(section);
+    gallery.after(section);
 
     if (window.IntersectionObserver) {
       requestAnimationFrame(() => inner.classList.add('is-visible'));
