@@ -1,0 +1,55 @@
+.hero-silhouette {
+  position: relative;
+  min-height: 580px;
+  isolation: isolate;
+}
+
+.hero-silhouette .sun {
+  z-index: 1;
+}
+
+.hero-boat-profile {
+  position: absolute;
+  z-index: 2;
+  inset: 7% -6% 5% -4%;
+  width: 110%;
+  height: 88%;
+  object-fit: contain;
+  filter: drop-shadow(0 28px 24px rgba(5, 27, 35, .17));
+}
+
+.hero-silhouette .visual-note {
+  z-index: 3;
+  right: 2%;
+  bottom: 5%;
+  padding: 8px 12px;
+  border: 1px solid rgba(7, 27, 36, .12);
+  border-radius: 999px;
+  background: rgba(250, 248, 242, .7);
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 1000px) {
+  .hero-silhouette {
+    min-height: 480px;
+  }
+
+  .hero-boat-profile {
+    inset: 3% -4% 4%;
+    width: 108%;
+    height: 92%;
+  }
+}
+
+@media (max-width: 650px) {
+  .hero-silhouette {
+    min-height: 330px;
+    margin-top: 8px;
+  }
+
+  .hero-boat-profile {
+    inset: 0 -11% 4%;
+    width: 122%;
+    height: 94%;
+  }
+}

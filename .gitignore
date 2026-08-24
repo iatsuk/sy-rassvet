@@ -1,0 +1,5 @@
+.DS_Store
+photos/source/*
+!photos/source/README.md
+tracks/source/*
+!tracks/source/README.md

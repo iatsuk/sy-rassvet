@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 688" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="title desc">
+  <title id="title">Ohlson 29 Rassvet profile</title>
+  <desc id="desc">A simplified side elevation of the Ohlson 29 Rassvet under sail, based on the supplied technical profile.</desc>
+
+  <defs>
+    <linearGradient id="sailFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fffdf7" stop-opacity=".92"/>
+      <stop offset="1" stop-color="#eee9dc" stop-opacity=".78"/>
+    </linearGradient>
+    <linearGradient id="topsidesFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6ca45"/>
+      <stop offset="1" stop-color="#e8ae18"/>
+    </linearGradient>
+    <linearGradient id="underbodyFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fffefa"/>
+      <stop offset="1" stop-color="#e9e6de"/>
+    </linearGradient>
+
+    <path id="hullProfile" d="M87 582.274 C140.288 580.196 184.353 583.313 226.368 588.509 C288.879 595.783 356.514 593.705 418 575 C401.604 590.587 380.084 599.94 350.365 605.136 C337.043 608.253 327.82 617.606 319.622 630.075 L296.053 665.407 C287.854 677.877 272.483 682.033 255.062 680.994 C231.492 680.994 208.947 677.877 192.551 674.759 C186.402 673.72 186.402 669.563 192.551 666.446 L206.898 659.172 L216.121 623.84 C182.303 617.606 141.313 611.371 92.124 612.41 Z"/>
+    <path id="rudderProfile" d="M52 585 C61 584 71 585 80 588 L79 626 C79 635 74 639 66 640 L52 642 Z"/>
+  </defs>
+
+  <g fill="url(#sailFill)" stroke="#10232b" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="3.2" d="M260 27 L259 482 L110 487 C144 381 181 268 219 160 C235 113 249 68 260 27 Z"/>
+    <path stroke-width="3.2" d="M309 155 L433 514 L332 491 C339 420 342 347 335 275 C331 230 321 190 309 155 Z"/>
+  </g>
+
+  <g fill="none" stroke="#10232b" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="2.4" d="M265 22 L434 519"/>
+    <path stroke-width="5" d="M108 488 L270 497"/>
+  </g>
+
+  <path fill="#10232b" stroke="#10232b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M261 518 L259 27.722 C259.667 21.224 261.333 17.65 264 17 C266.667 17.65 268.333 21.224 269 27.722 L271 518 Z"/>
+
+  <g fill="none" stroke="#10232b" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="3.2" d="M47 537 C112 534 177 531 244 531 C318 531 384 528 449 523"/>
+    <path stroke-width="3.2" d="M126 531 L150.773 519 C192.886 517 259.773 517 304.364 520 L344 531"/>
+  </g>
+
+  <g fill="#10232b" stroke="#10232b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M162 523 C174 520 196 520 208 523 L204 528 L166 528 Z"/>
+    <path d="M222 524.241 C228 522.586 239 522.586 245 524.241 L243 527 L224 527 Z"/>
+    <path d="M255 524.241 C261 522.586 272 522.586 278 524.241 L276 527 L257 527 Z"/>
+  </g>
+
+  <use href="#rudderProfile" fill="url(#underbodyFill)" stroke="#10232b" stroke-width="2" stroke-linejoin="round"/>
+  <use href="#hullProfile" fill="url(#underbodyFill)" stroke="#10232b" stroke-width="2" stroke-linejoin="round"/>
+
+  <!-- Yellow topsides and white underwater body follow the supplied profile as separate contours. -->
+  <path fill="url(#topsidesFill)" stroke="#10232b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M22 574 C29 561 36 546 43 538 C114 537 186 534 258 533 C329 533 397 530 461 523 C457 532 453 540 448 547 C438 562 425 576 403 587 C306 593 204 593 93 590 L50 588 C39 586 29 581 22 574 Z"/>
+
+  <path fill="none" stroke="#10232b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M37 545 C155 547 300 544 450 532"/>
+</svg>

@@ -1,0 +1,40 @@
+.voyage-atlas[hidden], [data-voyage-fallback][hidden]{display:none}
+.voyage-atlas{max-width:1400px;margin:70px auto 0;padding:22px;border-radius:var(--radius);background:var(--navy);color:#fff;box-shadow:var(--shadow)}
+.voyage-atlas-header{display:flex;align-items:end;justify-content:space-between;gap:35px;padding:10px 10px 22px}
+.voyage-atlas-header h3{margin:0;font-family:Marcellus,serif;font-size:clamp(30px,3vw,48px);font-weight:400}
+.voyage-atlas-totals{display:flex;gap:32px;margin:0}
+.voyage-atlas-totals div{padding-left:16px;border-left:1px solid rgba(255,255,255,.18)}
+.voyage-atlas-totals dt{font-family:Marcellus,serif;font-size:24px}
+.voyage-atlas-totals dd{margin:2px 0 0;color:#91a9ad;font-size:10px;text-transform:uppercase;letter-spacing:.12em}
+.voyage-year-filters{display:flex;flex-wrap:wrap;gap:8px;padding:0 10px 18px}
+.voyage-year-filters button,.voyage-map-toolbar button{border:1px solid rgba(255,255,255,.2);border-radius:999px;background:transparent;color:#c6d3d5;padding:8px 13px;cursor:pointer;font-size:11px;font-weight:700}
+.voyage-year-filters button:hover,.voyage-year-filters button.active{border-color:var(--sun);background:var(--sun);color:var(--navy)}
+.voyage-atlas-layout{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(290px,.65fr);min-height:610px;overflow:hidden;border-radius:17px;background:#0c303a}
+.voyage-map-wrap{position:relative;min-width:0;overflow:hidden;background:#d7dfdc}
+.voyage-map-wrap::after{position:absolute;z-index:420;inset:0;content:"";pointer-events:none;background:linear-gradient(rgba(255,250,232,.08),rgba(255,250,232,.08)),repeating-linear-gradient(0deg,transparent 0,transparent 79px,rgba(8,35,44,.06) 80px),repeating-linear-gradient(90deg,transparent 0,transparent 79px,rgba(8,35,44,.06) 80px);box-shadow:inset 0 0 0 1px rgba(8,35,44,.15)}
+.voyage-map-panel{width:100%;height:610px;background:#d7dfdc}
+.voyage-map-toolbar{position:absolute;z-index:500;top:14px;left:14px;display:flex;gap:7px;padding:6px;border-radius:999px;background:rgba(7,27,36,.9);box-shadow:0 7px 20px rgba(0,0,0,.18)}
+.voyage-map-toolbar button{min-width:34px;padding:7px 11px}
+.voyage-map-toolbar button:hover{background:#fff;color:var(--navy)}
+.voyage-track-list{max-height:610px;overflow:auto;padding:10px;background:#08232c}
+.voyage-group{margin-bottom:10px;overflow:hidden;border:1px solid rgba(255,255,255,.11);border-radius:14px;background:rgba(255,255,255,.025);transition:.2s}
+.voyage-group.active{border-color:rgba(241,187,50,.55);background:rgba(241,187,50,.055)}
+.voyage-group-button{display:block;width:100%;padding:16px;border:0;border-bottom:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.035);color:#fff;text-align:left;cursor:pointer}
+.voyage-group-button:hover{background:rgba(241,187,50,.09)}
+.voyage-group-button span{display:block;margin-bottom:7px;color:var(--sun);font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.voyage-group-button span b{font:inherit}
+.voyage-group-button strong{display:block;font-family:Marcellus,serif;font-size:20px;font-weight:400;line-height:1.2}
+.voyage-group-button small{display:block;margin-top:7px;color:#a8b9bb;font-size:10px;line-height:1.45}
+.voyage-group-legs{padding:5px 7px 7px}
+.voyage-track-item{border-bottom:1px solid rgba(255,255,255,.08);border-radius:9px;transition:.2s}
+.voyage-track-item:last-child{border-bottom:0}
+.voyage-track-item:hover,.voyage-track-item.active{background:rgba(241,187,50,.1)}
+.voyage-track-item.active{box-shadow:inset 3px 0 var(--sun)}
+.voyage-track-item button{display:block;width:100%;padding:13px 11px;border:0;background:transparent;color:#fff;text-align:left;cursor:pointer}
+.voyage-track-item strong{display:block;font-family:Marcellus,serif;font-size:16px;font-weight:400;line-height:1.25}
+.voyage-track-item small{display:block;margin-top:7px;color:#91a9ad;font-size:10px;line-height:1.45}
+.voyage-atlas .leaflet-container{font-family:Manrope,system-ui,sans-serif}
+.voyage-atlas .leaflet-tile-pane{filter:grayscale(.7) sepia(.16) saturate(.66) brightness(1.07) contrast(.91)}
+.voyage-atlas .leaflet-tooltip{border:0;border-radius:8px;background:var(--navy);color:#fff;box-shadow:0 8px 20px rgba(0,0,0,.24)}
+@media(max-width:900px){.voyage-atlas-layout{grid-template-columns:1fr}.voyage-map-panel{height:500px}.voyage-track-list{max-height:360px}.voyage-atlas-header{align-items:start;flex-direction:column}.voyage-atlas-totals{width:100%}}
+@media(max-width:560px){.voyage-atlas{margin-left:-10px;margin-right:-10px;padding:10px}.voyage-map-panel{height:430px}.voyage-atlas-totals{gap:18px}.voyage-atlas-totals dt{font-size:20px}}

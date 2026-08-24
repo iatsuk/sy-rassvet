@@ -1,0 +1,90 @@
+.language-switcher {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  margin-left: auto;
+  margin-right: 18px;
+}
+
+.language-switcher::after {
+  content: "⌄";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-56%);
+  pointer-events: none;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.language-switcher select {
+  min-height: 38px;
+  padding: 0 32px 0 13px;
+  border: 1px solid rgba(7, 27, 36, .22);
+  border-radius: 999px;
+  appearance: none;
+  background: rgba(250, 248, 242, .78);
+  color: var(--ink);
+  cursor: pointer;
+  font: 700 11px/1 Manrope, system-ui, sans-serif;
+  letter-spacing: .04em;
+}
+
+.language-switcher select:focus-visible {
+  outline: 3px solid rgba(13, 60, 73, .16);
+  outline-offset: 2px;
+  border-color: var(--sea);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+html[data-language="de"] .hero h1,
+html[data-language="ru"] .hero h1 {
+  font-size: clamp(44px, 5.7vw, 88px);
+}
+
+html[data-language="de"] .section h2,
+html[data-language="ru"] .section h2 {
+  font-size: clamp(39px, 4.6vw, 70px);
+}
+
+@media (max-width: 1000px) {
+  .language-switcher {
+    margin-left: auto;
+    margin-right: 8px;
+  }
+
+  .language-switcher select {
+    width: 72px;
+    padding-left: 11px;
+    padding-right: 25px;
+    text-overflow: ellipsis;
+  }
+
+  .language-switcher::after {
+    right: 9px;
+  }
+}
+
+@media (max-width: 560px) {
+  .language-switcher select {
+    width: 58px;
+    font-size: 10px;
+  }
+
+  html[data-language="de"] .hero h1,
+  html[data-language="ru"] .hero h1 {
+    font-size: clamp(40px, 12.5vw, 62px);
+  }
+}

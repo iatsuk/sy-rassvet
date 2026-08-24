@@ -1,0 +1,120 @@
+.new-chapter {
+  max-width: 1500px;
+  margin: auto;
+  padding-top: 35px;
+}
+
+.new-chapter-panel {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(44px, 7vw, 96px);
+  border-radius: var(--radius);
+  background:
+    radial-gradient(circle at 88% 10%, rgba(241, 187, 50, .24), transparent 26%),
+    linear-gradient(150deg, #0e3c49, #071b24);
+  color: #fff;
+  box-shadow: var(--shadow);
+}
+
+.new-chapter-panel::after {
+  content: "";
+  position: absolute;
+  right: -120px;
+  bottom: -180px;
+  width: 430px;
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.new-chapter-header {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, .72fr);
+  gap: 7vw;
+  align-items: end;
+}
+
+.new-chapter .eyebrow,
+.new-chapter-grid > article > span {
+  color: var(--sun);
+}
+
+.new-chapter-lead {
+  margin: 0;
+  color: #c0ced0;
+  font-size: 16px;
+}
+
+.new-chapter-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 70px;
+  border: 1px solid rgba(255, 255, 255, .13);
+  background: rgba(255, 255, 255, .13);
+}
+
+.new-chapter-grid article {
+  min-height: 300px;
+  padding: 34px;
+  background: rgba(7, 27, 36, .72);
+}
+
+.new-chapter-grid > article > span {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .17em;
+}
+
+.new-chapter-grid h3 {
+  margin: 50px 0 18px;
+  font-family: Marcellus, serif;
+  font-size: clamp(25px, 2.2vw, 34px);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.new-chapter-grid p {
+  margin: 0;
+  color: #aebfc2;
+  font-size: 14px;
+}
+
+@media (max-width: 1000px) {
+  .new-chapter-header,
+  .new-chapter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .new-chapter-grid article {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .new-chapter {
+    padding-top: 25px;
+  }
+
+  .new-chapter-panel {
+    padding: 38px 25px;
+  }
+
+  .new-chapter-grid {
+    margin-top: 45px;
+  }
+
+  .new-chapter-grid article {
+    padding: 28px;
+  }
+
+  .new-chapter-grid h3 {
+    margin-top: 35px;
+  }
+}

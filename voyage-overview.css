@@ -1,0 +1,17 @@
+/* Cruising overview panel: replaces the former schematic pseudo-map. */
+.route-overview{position:relative;min-height:620px;padding:clamp(36px,5vw,64px);overflow:hidden;background:radial-gradient(circle at 85% 10%,rgba(241,187,50,.18),transparent 28%),linear-gradient(160deg,#0e3c49,#061a23);color:#fff;display:flex;flex-direction:column;justify-content:space-between}
+.route-overview::before{content:"";position:absolute;inset:24px;border:1px solid rgba(255,255,255,.1);border-radius:16px;pointer-events:none}
+.overview-kicker{position:relative;margin:0 0 12px;color:var(--sun);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.18em}
+.overview-distance{position:relative;margin:0;font-family:Marcellus,serif;font-size:clamp(62px,8vw,112px);font-weight:400;line-height:.86;letter-spacing:-.055em}
+.overview-distance span{display:block;margin-top:12px;color:#a9bcc0;font-family:Manrope,sans-serif;font-size:12px;font-weight:600;line-height:1.4;letter-spacing:.13em;text-transform:uppercase}
+.overview-stats{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;margin:42px 0;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.13)}
+.overview-stat{padding:22px;background:rgba(4,29,38,.82)}
+.overview-stat strong{display:block;font-family:Marcellus,serif;font-size:32px;font-weight:400;line-height:1}
+.overview-stat span{display:block;margin-top:7px;color:#9fb2b6;font-size:10px;font-weight:600;letter-spacing:.11em;text-transform:uppercase}
+.cruising-grounds{position:relative}
+.cruising-grounds h3{margin:0 0 18px;font-size:11px;text-transform:uppercase;letter-spacing:.17em}
+.cruising-grounds ul{display:flex;flex-wrap:wrap;gap:9px;margin:0;padding:0;list-style:none}
+.cruising-grounds li{padding:8px 12px;border:1px solid rgba(255,255,255,.18);border-radius:999px;color:#c0ced0;font-size:11px}
+.overview-note{position:relative;margin:28px 0 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);color:#8fa5aa;font-size:11px}
+@media (max-width:900px){.route-overview{min-height:auto}.overview-distance{font-size:72px}.overview-stats{margin:32px 0}}
+@media (max-width:560px){.route-overview{padding:34px 25px}.route-overview::before{inset:14px}.overview-distance{font-size:58px}.overview-stats{grid-template-columns:1fr 1fr}.overview-stat{padding:17px}.overview-stat strong{font-size:27px}}
