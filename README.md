@@ -28,11 +28,13 @@ The site is built with plain HTML, CSS and JavaScript and is published through G
 ```text
 index.html                  Main page structure and English source content
 styles.css                  Core layout and visual design
+hero-rassvet.css            Hero profile layout and responsive treatment
+hero-rassvet.svg            Ohlson 29 hull profile used in the hero
 ownership-flow.css         Four-stage ownership chevron flow
 new-chapter.css             August 2026 handover and farewell section
 onboard-systems.css         Historical onboard-systems section
 script.js                   Dynamic voyage, systems and logbook content
-gallery.js                  Hero photograph, gallery and photo viewer
+gallery.js                  Gallery and photo viewer
 gallery-data.js             Generated gallery manifest
 gallery.css                 Gallery grid and viewer styles
 i18n.js                     Language detection and translation runtime

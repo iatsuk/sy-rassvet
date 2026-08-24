@@ -110,7 +110,7 @@ const createVoyageOverview = () => {
   kicker.className = 'overview-kicker';
   kicker.textContent = 'Cruising record';
   distance.className = 'overview-distance';
-  distance.textContent = '3,000 nm';
+  distance.textContent = '3,100 nm';
   distanceLabel.textContent = "sailed during Andrei's ownership";
   distance.append(distanceLabel);
   top.append(kicker, distance);
@@ -182,7 +182,7 @@ const renderVoyages = () => {
 
   const voyageSummary = document.querySelector('.voyages-header > p');
   if (voyageSummary) {
-    voyageSummary.textContent = "3,000 nautical miles sailed aboard Rassvet during Andrei's ownership, across the Baltic Sea, North Sea, Danish islands, Kattegat, Skagerrak and Dutch inland waterways.";
+    voyageSummary.textContent = "3,100 nautical miles sailed aboard Rassvet during Andrei's ownership, across the Baltic Sea, North Sea, Danish islands, Kattegat, Skagerrak and Dutch inland waterways.";
   }
 
   const heroFacts = document.querySelector('.hero-facts');
@@ -192,7 +192,7 @@ const renderVoyages = () => {
     const label = document.createElement('dd');
 
     mileage.dataset.mileage = '';
-    value.textContent = '3,000 nm';
+    value.textContent = '3,100 nm';
     label.textContent = 'sailed since 2023';
     mileage.append(value, label);
     heroFacts.append(mileage);

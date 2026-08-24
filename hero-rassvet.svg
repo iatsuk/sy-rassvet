@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="title desc">
+  <title id="title">Ohlson 29 Rassvet profile</title>
+  <desc id="desc">A simplified side elevation of the yellow Ohlson 29 Rassvet, showing her low coachroof, fin keel and separate rudder.</desc>
+
+  <defs>
+    <linearGradient id="topsides" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f8cf4e"/>
+      <stop offset="1" stop-color="#e4a80d"/>
+    </linearGradient>
+    <linearGradient id="underbody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#163f4b"/>
+      <stop offset="1" stop-color="#071b24"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-30%" width="140%" height="180%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#071b24" flood-opacity=".2"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#softShadow)">
+    <!-- Low cabin trunk and cockpit coaming, based on the Ohlson 29 side elevation. -->
+    <path d="M250 229 L284 224 L318 184 Q326 173 343 171 L525 171 Q543 173 557 187 L586 217 L773 217 L792 230 Z"
+          fill="#f8f4e9" stroke="#102f39" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M345 183 H388 V212 H338 Z M405 183 H450 V212 H401 Z M468 183 H513 L548 212 H466 Z"
+          fill="#244f59" opacity=".92"/>
+    <path d="M688 216 H770" fill="none" stroke="#102f39" stroke-width="5" stroke-linecap="round"/>
+
+    <!-- Yellow topsides. Bow is to the right. -->
+    <path d="M96 235
+             C180 241 260 240 338 233
+             C466 222 604 220 742 224
+             C882 227 1012 215 1134 187
+             C1114 224 1081 263 1035 293
+             C971 335 880 359 765 369
+             C619 382 471 376 341 359
+             C236 345 158 321 117 286
+             C101 272 94 253 96 235 Z"
+          fill="url(#topsides)" stroke="#071b24" stroke-width="5" stroke-linejoin="round"/>
+
+    <!-- Characteristic dark sheer stripe. -->
+    <path d="M113 260 C307 268 499 252 692 251 C846 251 988 234 1103 207"
+          fill="none" stroke="#071b24" stroke-width="13" stroke-linecap="round" opacity=".92"/>
+
+    <!-- Fin keel and separate rudder. -->
+    <path d="M470 369
+             C488 420 507 489 535 548
+             C576 561 632 558 680 538
+             C706 486 720 423 724 371
+             C641 379 554 379 470 369 Z"
+          fill="url(#underbody)" stroke="#071b24" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M178 326
+             C183 367 182 416 166 462
+             C140 451 119 432 108 406
+             L119 291
+             C135 306 154 317 178 326 Z"
+          fill="url(#underbody)" stroke="#071b24" stroke-width="4" stroke-linejoin="round"/>
+
+    <!-- Small deck and hull details. -->
+    <path d="M243 228 H803" fill="none" stroke="#071b24" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="824" cy="244" r="7" fill="#f8f4e9" stroke="#071b24" stroke-width="3"/>
+    <circle cx="861" cy="242" r="7" fill="#f8f4e9" stroke="#071b24" stroke-width="3"/>
+    <text x="735" y="315" text-anchor="middle" fill="#071b24" font-family="Manrope, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="8">RASSVET</text>
+  </g>
+
+  <path d="M60 493 C190 472 316 477 433 497 C568 520 697 517 818 491 C936 466 1043 468 1147 489"
+        fill="none" stroke="#0d3c49" stroke-width="4" stroke-linecap="round" opacity=".24"/>
+</svg>
