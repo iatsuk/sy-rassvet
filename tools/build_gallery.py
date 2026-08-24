@@ -156,7 +156,8 @@ def main() -> None:
         path.is_file() and path.suffix.lower() in SUPPORTED_EXTENSIONS
         for path in SOURCE_ROOT.rglob("*")
     ):
-        raise SystemExit("No private source photographs found; existing gallery assets were left unchanged.")
+        print("No private source photographs found; existing gallery assets were left unchanged.")
+        return
     from pillow_heif import register_heif_opener
 
     register_heif_opener(thumbnails=False)

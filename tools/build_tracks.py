@@ -270,7 +270,8 @@ def main() -> None:
     arguments = parser.parse_args()
     paths = source_files(arguments.files)
     if not paths:
-        raise SystemExit("No private GPX source files found; existing published GeoJSON was left unchanged.")
+        print("No private GPX source files found; existing published GeoJSON was left unchanged.")
+        return
     features = []
     for path in paths:
         if not path.exists():
