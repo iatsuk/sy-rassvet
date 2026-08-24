@@ -77,12 +77,5 @@ Object.assign(window.RASSVET_TRANSLATIONS_DE ||= {}, {
   "Bay of Lübeck": "Lübecker Bucht",
   "Mecklenburg coast cruise": "Reise entlang der mecklenburgischen Küste",
   "Sweden to Germany": "Schweden nach Deutschland",
-  "Delivery voyage to Lübeck": "Überführungsfahrt nach Lübeck",
-  "Propulsion": "Antrieb",
-  "Installed in 2005 with fewer than 750 engine hours. Professionally serviced by Davids Werft in 2024, 2025 and 2026.": "2005 eingebaut, mit weniger als 750 Motorstunden. 2024, 2025 und 2026 professionell durch Davids Werft gewartet.",
-  "Sail wardrobe": "Segelgarderobe",
-  "Mainsail, furling genoa and spinnaker": "Großsegel, Rollgenua und Spinnaker",
-  "Mainsail with two reefing points, 140% genoa on a roller-furling system, and a spinnaker used only a few times and remaining in as-new condition.": "Großsegel mit zwei Reffreihen, 140-%-Genua auf Rollanlage und ein nur wenige Male genutzter Spinnaker in nahezu neuwertigem Zustand.",
-  "Navigation": "Navigation",
-  "Chartplotter and instruments": "Kartenplotter und Instrumente"
+  "Delivery voyage to Lübeck": "Überführungsfahrt nach Lübeck"
 });

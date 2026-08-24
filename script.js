@@ -52,39 +52,6 @@ const cruisingGrounds = [
   'Skagerrak'
 ];
 
-const includedItems = [
-  {
-    category: 'Propulsion',
-    title: 'Nanni Diesel N2.14',
-    description: 'Installed in 2005 with fewer than 750 engine hours. Professionally serviced by Davids Werft in 2024, 2025 and 2026.'
-  },
-  {
-    category: 'Sail wardrobe',
-    title: 'Mainsail, furling genoa and spinnaker',
-    description: 'Mainsail with two reefing points, 140% genoa on a roller-furling system, and a spinnaker used only a few times and remaining in as-new condition.'
-  },
-  {
-    category: 'Navigation',
-    title: 'Chartplotter and instruments',
-    description: 'Garmin GPSMAP 525 chartplotter with chart coverage from Germany to Svalbard, together with NASA Marine Clipper Wind, Depth and Log instruments and a Silva 100 compass.'
-  },
-  {
-    category: 'Anchoring',
-    title: 'Two anchors',
-    description: 'A 7.5 kg Bruce anchor and a 16 kg CQR anchor are included with the yacht.'
-  },
-  {
-    category: 'Galley & comfort',
-    title: 'Equipment for life aboard',
-    description: 'Gimballed Origo alcohol stove, portable 12 V fridge, stereo, Wallas diesel heater and LED lighting.'
-  },
-  {
-    category: 'Power & utilities',
-    title: 'Charging and onboard systems',
-    description: 'Two 100 W solar panels, Victron Energy 15 A MPPT controller, Victron 230 V / 30 A charger, two 105 Ah AGM batteries, electric bilge pump and black-water holding tank.'
-  }
-];
-
 const loadStylesheet = (href) => {
   if (document.querySelector(`link[href="${href}"]`)) return;
 
@@ -201,37 +168,6 @@ const renderVoyages = () => {
   createVoyageOverview();
 };
 
-const renderIncludedInventory = () => {
-  const grid = document.querySelector('.included-grid');
-  if (!grid) return;
-
-  const fragment = document.createDocumentFragment();
-
-  includedItems.forEach(({ category, title, description }) => {
-    const article = document.createElement('article');
-    const categoryLabel = document.createElement('span');
-    const heading = document.createElement('h3');
-    const descriptionText = document.createElement('p');
-
-    article.className = 'included-card';
-    categoryLabel.textContent = category;
-    heading.textContent = title;
-    descriptionText.textContent = description;
-    article.append(categoryLabel, heading, descriptionText);
-    fragment.append(article);
-  });
-
-  grid.replaceChildren(fragment);
-
-  const heading = document.querySelector('#included-title');
-  if (heading) heading.textContent = 'Systems aboard Rassvet in 2026';
-
-  const summary = document.querySelector('.included-header > p');
-  if (summary) {
-    summary.textContent = 'A historical snapshot of the principal equipment and fixed systems aboard Rassvet at the end of the 2023–2026 chapter.';
-  }
-};
-
 const renderBlog = () => {
   const gallery = document.querySelector('#gallery');
   if (!gallery) return;
@@ -284,7 +220,6 @@ const renderBlog = () => {
 loadStylesheet('voyage-overview.css');
 loadStylesheet('logbook.css');
 renderVoyages();
-renderIncludedInventory();
 renderBlog();
 
 window.addEventListener('scroll', () => {
