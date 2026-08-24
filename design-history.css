@@ -20,17 +20,17 @@
 .design-family-row strong{display:block;font-size:13px}
 .design-family-row small{display:block;margin-top:3px;color:var(--muted);font-size:10px}
 .design-family-row p{margin:0;color:var(--muted);font-size:12px;line-height:1.55}
-.design-history-modern{display:grid;grid-template-columns:minmax(0,.8fr) minmax(340px,1.2fr);gap:70px;margin-top:72px;padding:clamp(34px,5vw,60px);border-radius:var(--radius);background:var(--navy);color:#fff}
+.design-history-modern{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(340px,.82fr);gap:60px;margin-top:72px;padding:clamp(34px,5vw,60px);border-radius:var(--radius);background:var(--navy);color:#fff}
 .design-history-modern .eyebrow{color:var(--sun)}
 .design-history-modern-copy p{color:#a9bbbf}
-.modern-comparison{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;align-self:stretch;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.12);border-radius:16px;overflow:hidden}
-.modern-comparison article{padding:24px;background:#0b303b}
+.modern-comparison{display:grid;grid-template-columns:1fr;gap:1px;align-self:start;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.12);border-radius:16px;overflow:hidden}
+.modern-comparison article{display:grid;grid-template-columns:minmax(90px,.55fr) minmax(135px,.8fr) minmax(0,1.65fr);gap:18px;align-items:center;padding:19px 21px;background:#0b303b}
 .modern-comparison span{display:block;color:var(--sun);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
-.modern-comparison strong{display:block;margin-top:13px;font-family:Marcellus,serif;font-size:24px;font-weight:400}
-.modern-comparison small{display:block;margin-top:8px;color:#9fb2b6;font-size:11px;line-height:1.55}
+.modern-comparison strong{display:block;font-family:Marcellus,serif;font-size:21px;font-weight:400}
+.modern-comparison small{display:block;color:#9fb2b6;font-size:11px;line-height:1.55}
 .design-history-sources{margin:28px 0 0;color:var(--muted);font-size:10px;line-height:1.7}
 .design-history-sources strong{color:var(--ink)}
 .design-history-sources a{border-bottom:1px solid rgba(13,60,73,.25);color:var(--sea)}
 .design-history-sources a:hover{border-color:currentColor}
-@media (max-width:1050px){.design-history-header,.design-history-position,.design-history-modern{grid-template-columns:1fr;gap:38px}.design-history-origin{grid-template-columns:1fr}.modern-comparison{grid-template-columns:1fr 1fr 1fr}}
-@media (max-width:720px){.design-history-origin{margin-top:40px}.design-history-card{padding:28px 25px}.design-history-position,.design-history-modern{margin-top:50px}.design-family-row{grid-template-columns:1fr}.design-family-row.design-family-head{display:none}.design-family-row>div{padding:13px 18px}.design-family-row>div+div{padding-top:0}.design-family-row{gap:0;border-bottom:1px solid var(--line)}.design-family-row:last-child{border-bottom:0}.modern-comparison{grid-template-columns:1fr}.design-history-modern{padding:32px 25px}}
+@media (max-width:1050px){.design-history-header,.design-history-position,.design-history-modern{grid-template-columns:1fr;gap:38px}.design-history-origin{grid-template-columns:1fr}}
+@media (max-width:720px){.design-history-origin{margin-top:40px}.design-history-card{padding:28px 25px}.design-history-position,.design-history-modern{margin-top:50px}.design-family-row{grid-template-columns:1fr}.design-family-row.design-family-head{display:none}.design-family-row>div{padding:13px 18px}.design-family-row>div+div{padding-top:0}.design-family-row{gap:0;border-bottom:1px solid var(--line)}.design-family-row:last-child{border-bottom:0}.modern-comparison article{grid-template-columns:1fr;gap:6px;padding:20px}.modern-comparison strong{font-size:23px}.design-history-modern{padding:32px 25px}}
