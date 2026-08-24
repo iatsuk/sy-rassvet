@@ -1,0 +1,122 @@
+.ownership-section {
+  max-width: 1500px;
+  margin: auto;
+  padding-top: 35px;
+}
+
+.ownership-line {
+  --arrow: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  margin-top: 64px;
+  filter: drop-shadow(0 12px 28px rgba(7, 27, 36, .1));
+}
+
+.ownership-line article {
+  position: relative;
+  z-index: 4;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem calc(1.5rem + var(--arrow)) 1.5rem 1.5rem;
+  border-radius: 1.1rem 0 0 1.1rem;
+  background: #f0eadf;
+}
+
+.ownership-line article:nth-child(2) {
+  z-index: 3;
+  background: #e8e0d3;
+}
+
+.ownership-line article:nth-child(3) {
+  z-index: 2;
+  background: #ddd5c8;
+}
+
+.ownership-line article + article {
+  padding-left: calc(1.5rem + var(--arrow));
+  border-radius: 0;
+}
+
+.ownership-line article:last-child {
+  z-index: 1;
+  padding-right: 1.5rem;
+  border-radius: 0 1.1rem 1.1rem 0;
+}
+
+.ownership-line article:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  right: calc(var(--arrow) * -1);
+  width: var(--arrow);
+  height: 100%;
+  background: inherit;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  pointer-events: none;
+}
+
+.ownership-line article > span {
+  color: #71848a;
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.ownership-line h3 {
+  margin: auto 0 .75rem;
+  color: var(--navy);
+  font-family: Marcellus, Georgia, serif;
+  font-size: clamp(1.45rem, 2vw, 1.85rem);
+  font-weight: 400;
+}
+
+.ownership-line p {
+  margin: 0;
+  color: #576b72;
+  font-size: .86rem;
+}
+
+.ownership-line .current-owner {
+  background: var(--sea);
+  color: #fff;
+}
+
+.ownership-line .current-owner > span,
+.ownership-line .current-owner p {
+  color: rgba(255, 255, 255, .72);
+}
+
+.ownership-line .current-owner h3 {
+  color: #fff;
+}
+
+@media (max-width: 1150px) {
+  .ownership-line {
+    grid-template-columns: 1fr;
+    gap: .7rem;
+    margin-top: 48px;
+    filter: none;
+  }
+
+  .ownership-line article,
+  .ownership-line article + article,
+  .ownership-line article:last-child {
+    min-height: 170px;
+    padding: 1.4rem;
+    border-radius: 1rem;
+  }
+
+  .ownership-line article::after {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .ownership-section {
+    padding-top: 20px;
+  }
+}

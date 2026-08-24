@@ -17,6 +17,7 @@ The site is built with plain HTML, CSS and JavaScript and is published through G
 - automatic initial language selection from browser preferences
 - manual `EN / DE / RU` language selector with the choice stored locally
 - documented maintenance timeline and cruising history
+- chevron-flow ownership history from FULLSTAR to the current RASSVET chapter
 - historical snapshot of the yacht's systems in 2026
 - responsive image gallery with a full-screen photo viewer
 - generated WebP and JPEG gallery assets
@@ -27,6 +28,7 @@ The site is built with plain HTML, CSS and JavaScript and is published through G
 ```text
 index.html                  Main page structure and English source content
 styles.css                  Core layout and visual design
+ownership-flow.css         Four-stage ownership chevron flow
 new-chapter.css             August 2026 handover and farewell section
 onboard-systems.css         Historical onboard-systems section
 script.js                   Dynamic voyage, systems and logbook content
