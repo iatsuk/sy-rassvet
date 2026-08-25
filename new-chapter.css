@@ -86,6 +86,49 @@
   font-size: 14px;
 }
 
+.new-chapter-signoff {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 38px;
+}
+
+.new-chapter-signoff::before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(241, 187, 50, .45));
+}
+
+.skipper-mark {
+  display: grid;
+  width: 170px;
+  margin: 0;
+  justify-items: center;
+  text-align: center;
+}
+
+.skipper-mark img {
+  display: block;
+  width: 150px;
+  height: 150px;
+  opacity: .78;
+  transform: rotate(-2deg);
+  filter: drop-shadow(0 10px 22px rgba(0, 0, 0, .2));
+}
+
+.skipper-mark figcaption {
+  margin-top: 8px;
+  color: rgba(255, 255, 255, .56);
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
 @media (max-width: 1000px) {
   .new-chapter-header,
   .new-chapter-grid {
@@ -116,5 +159,19 @@
 
   .new-chapter-grid h3 {
     margin-top: 35px;
+  }
+
+  .new-chapter-signoff {
+    justify-content: center;
+    margin-top: 34px;
+  }
+
+  .new-chapter-signoff::before {
+    display: none;
+  }
+
+  .skipper-mark img {
+    width: 118px;
+    height: 118px;
   }
 }

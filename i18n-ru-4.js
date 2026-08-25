@@ -42,6 +42,7 @@ Object.assign(window.RASSVET_TRANSLATIONS_RU ||= {}, {
   "More than miles in a logbook": "Больше, чем мили в судовом журнале",
   "I am grateful for the time I owned this hull, for everything she taught me, for the way she influenced and changed me, and for all the people I met because of her.": "Я благодарен за время, когда был владельцем этого корпуса, за всё, чему она меня научила, за то, как повлияла на меня и изменила, и за всех людей, с которыми я познакомился благодаря ей.",
   "What comes next": "Что будет дальше",
+  "Andrei’s skipper’s mark · 2023–2026": "Шкиперская печать Андрея · 2023–2026",
   "A boat with people around her": "Лодка, вокруг которой есть люди",
   "I wish Janne and Rabea many wonderful moments aboard this beautiful yacht, and Rassvet many more years of sailing, care and new stories.": "Желаю Янне и Рабеа множества прекрасных моментов на борту этой чудесной яхты, а Rassvet — ещё многих лет под парусом, заботы и новых историй.",
   "The dimensions and construction figures describe the original Ohlson 29 design. The propulsion and tank details below record Rassvet as she was handed over in August 2026.": "Размеры и конструктивные данные относятся к исходному проекту Ohlson 29. Сведения о двигателе и танках фиксируют состояние Rassvet на момент передачи в августе 2026 года.",

@@ -42,6 +42,7 @@ Object.assign(window.RASSVET_TRANSLATIONS_DE ||= {}, {
   "More than miles in a logbook": "Mehr als Meilen im Logbuch",
   "I am grateful for the time I owned this hull, for everything she taught me, for the way she influenced and changed me, and for all the people I met because of her.": "Ich bin dankbar für die Zeit, in der mir dieser Rumpf gehörte, für alles, was sie mich gelehrt hat, dafür, wie sie mich geprägt und verändert hat, und für all die Menschen, die ich durch sie kennenlernen durfte.",
   "What comes next": "Was nun folgt",
+  "Andrei’s skipper’s mark · 2023–2026": "Andreis Skipperstempel · 2023–2026",
   "A boat with people around her": "Ein Boot mit Menschen um sich",
   "I wish Janne and Rabea many wonderful moments aboard this beautiful yacht, and Rassvet many more years of sailing, care and new stories.": "Ich wünsche Janne und Rabea viele wunderbare Momente an Bord dieser schönen Yacht und Rassvet noch viele Jahre voller Reisen, Fürsorge und neuer Geschichten.",
   "The dimensions and construction figures describe the original Ohlson 29 design. The propulsion and tank details below record Rassvet as she was handed over in August 2026.": "Die Abmessungen und Konstruktionsdaten beschreiben den ursprünglichen Ohlson-29-Entwurf. Die Angaben zu Antrieb und Tanks halten Rassvets Stand bei der Übergabe im August 2026 fest.",
