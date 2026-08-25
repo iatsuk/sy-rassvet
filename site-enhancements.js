@@ -85,3 +85,36 @@
   script.src = 'video-tour.js';
   document.body.append(script);
 })();
+
+(() => {
+  const hideSectionAndNav = (id) => {
+    const section = document.getElementById(id);
+    const navigationLink = document.querySelector(`.site-nav a[href="#${id}"]`);
+    if (section) section.hidden = true;
+    if (navigationLink) navigationLink.hidden = true;
+  };
+
+  // The generated manifest is the source of truth for whether the gallery has
+  // publishable media. Do not leave a large placeholder section in the archive.
+  if (!Array.isArray(window.RASSVET_GALLERY) || window.RASSVET_GALLERY.length === 0) {
+    hideSectionAndNav('gallery');
+  }
+
+  // The static illustrated route board used to act as a fallback when no GPX
+  // archive was present. The archive now stays out of the page entirely unless
+  // at least one real line feature is available.
+  fetch('data/tracks.geojson', { cache: 'no-store' })
+    .then((response) => {
+      if (!response.ok) throw new Error(`tracks.geojson: ${response.status}`);
+      return response.json();
+    })
+    .then((data) => {
+      const features = (data.features || []).filter((feature) =>
+        ['LineString', 'MultiLineString'].includes(feature.geometry?.type));
+      if (!features.length) hideSectionAndNav('voyages');
+    })
+    .catch((error) => {
+      console.warn('Voyage archive is unavailable; hiding the empty section.', error);
+      hideSectionAndNav('voyages');
+    });
+})();
