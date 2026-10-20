@@ -178,3 +178,16 @@ Before merging website changes, verify:
 ## Ownership and content
 
 The website is a historical archive. Photographs, maintenance records and original writing from the 2023–2026 chapter belong to their respective authors unless otherwise stated.
+
+## Legal information and optional external content
+
+The footer links directly to the shared multilingual Impressum and Datenschutz at
+`https://deelstuff.com/`. Both documents explicitly cover this domain. Address and
+contact values are injected by the Deelstuff build from GitHub Actions Variables;
+no postal address is stored in this repository. Update the shared documents when
+changing hosting, map layers or external services.
+
+Fonts and Leaflet are served locally from `assets/`, with upstream licences.
+Optional embedded content requires a per-page visitor choice through
+`external-content.js`; removing the block unloads its iframe. The choice is not
+stored. The local map still loads OpenStreetMap tiles when displayed.

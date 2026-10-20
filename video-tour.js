@@ -49,7 +49,6 @@
     const description = document.createElement('p');
     const link = document.createElement('a');
     const frame = document.createElement('div');
-    const iframe = document.createElement('iframe');
 
     section.id = 'video-tour';
     section.className = 'section video-tour';
@@ -64,19 +63,19 @@
     link.href = 'https://youtube.com/shorts/2GxUnS_-k8s';
     link.target = '_blank';
     link.rel = 'noreferrer';
-    frame.className = 'video-tour-frame';
-    iframe.dataset.videoFrame = '';
-    iframe.src = 'https://www.youtube-nocookie.com/embed/2GxUnS_-k8s?rel=0';
-    iframe.loading = 'lazy';
-    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
-    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-    iframe.allowFullscreen = true;
+    frame.className = 'video-tour-frame external-content';
+    frame.dataset.videoFrame = '';
+    frame.dataset.externalContent = '';
+    frame.dataset.externalService = 'YouTube';
+    frame.dataset.externalKind = 'video';
+    frame.dataset.externalSrc = 'https://www.youtube-nocookie.com/embed/2GxUnS_-k8s?rel=0';
+    frame.dataset.privacySection = 'sy-rassvet';
 
     text.append(eyebrow, heading, description, link);
-    frame.append(iframe);
     inner.append(text, frame);
     section.append(inner);
     gallery.after(section);
+    window.SiteExternalContent.initialize(frame);
 
     if (window.IntersectionObserver) {
       requestAnimationFrame(() => inner.classList.add('is-visible'));
@@ -93,7 +92,10 @@
     section.querySelector('[data-video-title]').textContent = text.title;
     section.querySelector('[data-video-description]').textContent = text.description;
     section.querySelector('[data-video-link]').textContent = text.link;
-    section.querySelector('[data-video-frame]').title = text.frameTitle;
+    const frame = section.querySelector('[data-video-frame]');
+    frame.dataset.externalTitle = text.frameTitle;
+    const iframe = frame.querySelector('iframe');
+    if (iframe) iframe.title = text.frameTitle;
   };
 
   apply();

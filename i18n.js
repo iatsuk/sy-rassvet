@@ -235,6 +235,11 @@
     .then((loadedDictionary) => {
       dictionary = loadedDictionary;
       updateDocumentMetadata();
+      document.querySelectorAll('[data-legal-page]').forEach((link) => {
+        const prefix = language === 'ru' ? '' : `/${language}`;
+        const section = link.dataset.legalPage === 'datenschutz' ? '#sy-rassvet' : '';
+        link.href = `https://deelstuff.com${prefix}/${link.dataset.legalPage}/${section}`;
+      });
       createLanguageSelector();
       translateTree(document.documentElement);
 
